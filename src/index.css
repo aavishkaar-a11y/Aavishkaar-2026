@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/samarkan');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Stranger Things Inspired Dark Theme */
+    --background: 240 20% 6%;
+    --foreground: 60 10% 95%;
+
+    --card: 240 15% 10%;
+    --card-foreground: 60 10% 95%;
+
+    --popover: 240 15% 8%;
+    --popover-foreground: 60 10% 95%;
+
+    /* Neon Yellow - Primary */
+    --primary: 52 95% 55%;
+    --primary-foreground: 240 20% 6%;
+
+    /* Electric Blue - Secondary */
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 240 20% 6%;
+
+    /* Deep Navy - Muted */
+    --muted: 240 15% 15%;
+    --muted-foreground: 220 10% 60%;
+
+    /* Neon Accent */
+    --accent: 190 100% 50%;
+    --accent-foreground: 240 20% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 60 10% 95%;
+
+    --border: 240 15% 20%;
+    --input: 240 15% 15%;
+    --ring: 52 95% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom Glow Colors */
+    --neon-yellow: 52 95% 55%;
+    --neon-blue: 190 100% 50%;
+    --neon-red: 0 100% 60%;
+    --deep-navy: 240 40% 8%;
+    
+    /* Glow Effects */
+    --glow-yellow: 0 0 20px hsl(52 95% 55% / 0.5), 0 0 40px hsl(52 95% 55% / 0.3), 0 0 60px hsl(52 95% 55% / 0.1);
+    --glow-blue: 0 0 20px hsl(190 100% 50% / 0.5), 0 0 40px hsl(190 100% 50% / 0.3), 0 0 60px hsl(190 100% 50% / 0.1);
+    --glow-red: 0 0 20px hsl(0 100% 60% / 0.5), 0 0 40px hsl(0 100% 60% / 0.3);
+    --text-glow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+
+    --sidebar-background: 240 20% 6%;
+    --sidebar-foreground: 60 10% 95%;
+    --sidebar-primary: 52 95% 55%;
+    --sidebar-primary-foreground: 240 20% 6%;
+    --sidebar-accent: 240 15% 15%;
+    --sidebar-accent-foreground: 60 10% 95%;
+    --sidebar-border: 240 15% 20%;
+    --sidebar-ring: 52 95% 55%;
+  }
+
+  .dark {
+    --background: 240 20% 6%;
+    --foreground: 60 10% 95%;
+    --card: 240 15% 10%;
+    --card-foreground: 60 10% 95%;
+    --popover: 240 15% 8%;
+    --popover-foreground: 60 10% 95%;
+    --primary: 52 95% 55%;
+    --primary-foreground: 240 20% 6%;
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 240 20% 6%;
+    --muted: 240 15% 15%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 190 100% 50%;
+    --accent-foreground: 240 20% 6%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 60 10% 95%;
+    --border: 240 15% 20%;
+    --input: 240 15% 15%;
+    --ring: 52 95% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Stranger Things Style Title */
+  .title-stranger {
+    font-family: 'Creepster', cursive;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* Neon Glow Text */
+  .neon-yellow {
+    color: hsl(var(--neon-yellow));
+    text-shadow: var(--glow-yellow);
+  }
+
+  .neon-blue {
+    color: hsl(var(--neon-blue));
+    text-shadow: var(--glow-blue);
+  }
+
+  .neon-red {
+    color: hsl(var(--neon-red));
+    text-shadow: var(--glow-red);
+  }
+
+  /* Neon Border Effects */
+  .neon-border-yellow {
+    border: 2px solid hsl(var(--neon-yellow));
+    box-shadow: var(--glow-yellow), inset 0 0 20px hsl(52 95% 55% / 0.1);
+  }
+
+  .neon-border-blue {
+    border: 2px solid hsl(var(--neon-blue));
+    box-shadow: var(--glow-blue), inset 0 0 20px hsl(190 100% 50% / 0.1);
+  }
+
+  /* Flicker Animation for Neon */
+  .flicker {
+    animation: flicker 3s infinite alternate;
+  }
+
+  /* Glass Card Effect */
+  .glass-card {
+    background: linear-gradient(
+      135deg,
+      hsl(240 15% 12% / 0.8),
+      hsl(240 15% 8% / 0.9)
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border));
+  }
+
+  /* Gradient Backgrounds */
+  .gradient-dark {
+    background: linear-gradient(
+      180deg,
+      hsl(240 40% 4%) 0%,
+      hsl(240 30% 8%) 50%,
+      hsl(240 20% 6%) 100%
+    );
+  }
+
+  .gradient-radial {
+    background: radial-gradient(
+      ellipse at center,
+      hsl(240 30% 12%) 0%,
+      hsl(240 20% 6%) 100%
+    );
+  }
+
+  /* Smooth Glow Background Effect */
+  .glow-bg {
+    background: 
+      radial-gradient(ellipse at 20% 0%, hsl(190 100% 50% / 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsl(52 95% 55% / 0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 100%, hsl(0 100% 60% / 0.05) 0%, transparent 50%),
+      linear-gradient(180deg, hsl(240 40% 4%) 0%, hsl(240 20% 6%) 100%);
+  }
+
+  /* Glow Orb Animation */
+  .glow-orb {
+    animation: glow-breathe 6s ease-in-out infinite;
+  }
+
+  /* Marquee Styles */
+  .marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-content {
+    display: inline-block;
+    animation: marquee 30s linear infinite;
+  }
+
+  /* Event Card Hover */
+  .event-card {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .event-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--glow-blue);
+  }
+
+  /* Navbar Styles */
+  .nav-link {
+    @apply relative px-4 py-2 text-foreground/80 transition-all duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 transition-all duration-300;
+    background: hsl(var(--neon-yellow));
+    box-shadow: var(--glow-yellow);
+  }
+
+  .nav-link:hover {
+    color: hsl(var(--neon-yellow));
+    text-shadow: 0 0 10px hsl(52 95% 55% / 0.5);
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    color: hsl(var(--neon-yellow));
+    text-shadow: var(--glow-yellow);
+  }
+
+  .nav-link.active::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(240 20% 6%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--neon-yellow) / 0.5);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--neon-yellow));
+  }
+}
+
+/* Keyframe Animations */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: var(--text-glow);
+  }
+  20%, 24%, 55% {
+    opacity: 0.7;
+    text-shadow: none;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: var(--glow-yellow);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(52 95% 55% / 0.8), 0 0 60px hsl(52 95% 55% / 0.5), 0 0 90px hsl(52 95% 55% / 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-breathe {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px hsl(52 95% 55% / 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px hsl(52 95% 55% / 0.8));
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out forwards;
+}
