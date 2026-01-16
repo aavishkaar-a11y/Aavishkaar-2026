@@ -1,4 +1,4 @@
-import strangerthingsVideo from "@/assets/stranger-things-intro.mp4";
+import strangerthingsVideo from "@/assets/Aaviskaartrailer.mp4";
 
 export function ThemeVideo() {
   return (

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logoCircular from "@/assets/logo-circular.png";
 
 const topNavItems = [
   { label: "Home", path: "/" },
@@ -58,17 +59,24 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* College Name - Desktop */}
-            <div className="hidden lg:block text-right">
-              <p className="text-xs text-muted-foreground leading-tight">
-                Vel Tech High Tech
-              </p>
-              <p className="text-xs text-muted-foreground leading-tight">
-                Dr. Rangarajan Dr. Sakunthala
-              </p>
-              <p className="text-xs text-primary font-medium">
-                Engineering College
-              </p>
+  {/* College Name with Logo - Desktop */}
+            <div className="hidden lg:flex items-center gap-3">
+              <div className="text-right">
+                <p className="text-xs text-muted-foreground leading-tight">
+                  Vel Tech High Tech
+                </p>
+                <p className="text-xs text-muted-foreground leading-tight">
+                  Dr. Rangarajan Dr. Sakunthala
+                </p>
+                <p className="text-xs text-primary font-medium">
+                  Engineering College
+                </p>
+              </div>
+              <img 
+                src={logoCircular} 
+                alt="College Logo" 
+                className="w-10 h-10 rounded-full border-2 border-primary/50 shadow-lg shadow-primary/20"
+              />
             </div>
 
             {/* Mobile Menu Button */}

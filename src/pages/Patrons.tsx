@@ -1,39 +1,44 @@
 import { Layout } from "@/components/layout/Layout";
 import { ScrollAnimation } from "@/components/ui/ScrollAnimation";
+import founderImg from "@/assets/founder.png";
+import cofounderImg from "@/assets/cofounder.png";
+import chairpersonImg from "@/assets/Chairperson.jpg";
+import principalImg from "@/assets/principal.jpg";
+import teamImg from "@/assets/group1.jpeg";
 
 const patrons = [
   {
     name: "Col. Prof. Vel. Dr. R. Rangarajan",
     title: "Founder President and Chairman",
     description: "A visionary leader whose dedication and commitment have shaped the institution into a hub of excellence in education. His guidance continues to inspire the development of events like AAVISHKAAR, promoting the pursuit of talent and knowledge.",
-    image: "/placeholder.svg",
+    image: founderImg,
   },
   {
     name: "Dr. Sakunthala Rangarajan",
     title: "Foundress President and Vice-Chairman",
     description: "A compassionate leader nurturing innovation and excellence. Her unwavering support and vision have been instrumental in fostering cultural activities and student development at the institution.",
-    image: "/placeholder.svg",
+    image: cofounderImg,
   },
   {
     name: "Mrs. Rangarajan Mahalakshmi Kishore",
     title: "Chairperson and Managing Trustee",
     description: "Ensures smooth institutional functioning and student growth. Her administrative excellence and dedication to student welfare have been key to the success of major events like AAVISHKAAR.",
-    image: "/placeholder.svg",
+    image: chairpersonImg,
   },
   {
     name: "Prof. Dr. E. Kamalanaban",
     title: "Principal",
     description: "Driving academic excellence and cultural development. Under his dynamic leadership, the institution continues to achieve new heights in education, research, and student activities.",
-    image: "/placeholder.svg",
+    image: principalImg,
   },
 ];
 
 const organizingTeam = {
   faculty: [
-    { name: "Dr. M. Gopinath", role: "Dean - Cultural Club's and Activities (CCA)", phone: "9994041130" }
+    { name: "Dr. M. Gopinath", role: "Associate Dean (IIC)", phone: "9994041130" },
   ],
   students: [
-    { name: "Mr. Charan", department: "AIDS, IV year", phone: "020250252" },
+    { name: "Mr. Charan", department: "AIDS, IV year", phone: "9361811963" },
     { name: "Ms. Venanshiya. P", department: "ECE, IV year", phone: "6369453279" }
   ],
 };
@@ -41,7 +46,7 @@ const organizingTeam = {
 const Patrons = () => {
   return (
     <Layout>
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="pt-12 pb-16 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <ScrollAnimation>
@@ -100,7 +105,7 @@ const Patrons = () => {
         </div>
       </section>
 
-      {/* Faculty Coordinators */}
+      {/* Organizing Team */}
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <ScrollAnimation>
@@ -116,42 +121,45 @@ const Patrons = () => {
             <ScrollAnimation delay={100}>
               <div className="flex justify-center">
                 <div className="p-6 rounded-xl border-2 border-primary/50 text-center max-w-md w-full" style={{ backgroundColor: 'hsl(240 25% 15%)' }}>
-                  <h4 className="text-primary font-bold text-lg mb-2">Faculty Coordinator</h4>
-                  <p className="text-foreground font-semibold">{organizingTeam.faculty[0].name}</p>
-                  <p className="text-muted-foreground text-sm">{organizingTeam.faculty[0].role}</p>
+                  <p className="text-foreground font-semibold text-lg">{organizingTeam.faculty[0].name}</p>
+                  <p className="text-muted-foreground">{organizingTeam.faculty[0].role}</p>
                   {organizingTeam.faculty[0].phone && (
-                    <p className="text-muted-foreground text-sm">{organizingTeam.faculty[0].phone}</p>
+                    <p className="text-secondary mt-2">{organizingTeam.faculty[0].phone}</p>
                   )}
                 </div>
               </div>
             </ScrollAnimation>
 
-            {/* Other Faculty */}
-            <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              {organizingTeam.faculty.slice(1).map((member, index) => (
-                <ScrollAnimation key={member.name} delay={200 + index * 100}>
-                  <div className="p-6 rounded-xl border-2 border-primary/30 text-center" style={{ backgroundColor: 'hsl(240 25% 15%)' }}>
-                    <h4 className="text-primary font-bold text-lg mb-2">Faculty Coordinator</h4>
-                    <p className="text-foreground font-semibold">{member.name}</p>
-                    <p className="text-muted-foreground text-sm">{member.role}</p>
-                    {member.phone && (
-                      <p className="text-muted-foreground text-sm">{member.phone}</p>
-                    )}
+            {/* Group Photo Placeholder */}
+            <ScrollAnimation delay={200}>
+              <div className="flex justify-center">
+                <div className="w-full max-w-3xl h-64 md:h-80 rounded-xl border-4 border-primary/30 overflow-hidden" style={{ backgroundColor: 'hsl(240 25% 10%)' }}>
+                  <div className="w-full h-full flex items-center justify-center">
+                    <img
+        src={teamImg}
+        alt="Organizing Team"
+        className="w-full h-full object-cover"
+      />
                   </div>
-                </ScrollAnimation>
-              ))}
-            </div>
+                </div>
+              </div>
+            </ScrollAnimation>
 
             {/* Student Coordinators */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-4 mt-12">
+            <ScrollAnimation delay={300}>
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-semibold text-secondary">Student Coordinators</h3>
+              </div>
+            </ScrollAnimation>
+            
+            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-10">
               {organizingTeam.students.map((student, index) => (
-                <ScrollAnimation key={student.name} delay={300 + index * 50}>
+                <ScrollAnimation key={student.name} delay={350 + index * 50}>
                   <div className="p-5 rounded-xl border-2 border-secondary/30 text-center" style={{ backgroundColor: 'hsl(240 25% 15%)' }}>
-                    <h4 className="text-secondary font-bold text-sm mb-2">Student Coordinator</h4>
                     <p className="text-foreground font-semibold text-sm">{student.name}</p>
                     <p className="text-muted-foreground text-xs">{student.department}</p>
                     {student.phone && (
-                      <p className="text-muted-foreground text-xs">{student.phone}</p>
+                      <p className="text-muted-foreground text-xs mt-1">{student.phone}</p>
                     )}
                   </div>
                 </ScrollAnimation>

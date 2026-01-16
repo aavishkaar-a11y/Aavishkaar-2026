@@ -13,6 +13,9 @@ import EventDetail from "./pages/EventDetail";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import BackgroundMusic from "@/components/ui/BackgroundMusic";
+import { IntroVideo } from "@/components/ui/IntroVideo";
+
 
 const queryClient = new QueryClient();
 
@@ -22,6 +25,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <BackgroundMusic />
+       <IntroVideo />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about-event" element={<AboutEvent />} />

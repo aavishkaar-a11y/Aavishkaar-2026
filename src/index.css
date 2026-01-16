@@ -358,3 +358,8 @@
 .animate-slide-in-right {
   animation: slide-in-right 0.8s ease-out forwards;
 }
+/* 🔒 MOBILE WIDTH FIX */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
