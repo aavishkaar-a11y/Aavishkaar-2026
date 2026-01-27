@@ -17,6 +17,10 @@ import BackgroundMusic from "@/components/ui/BackgroundMusic";
 import { IntroVideo } from "@/components/ui/IntroVideo";
 
 
+
+
+
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -38,7 +42,11 @@ const App = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          {/* REGISTRATION FLOW */}
+
+  {/* CATCH-ALL MUST BE LAST */}
+  <Route path="*" element={<NotFound />} />
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

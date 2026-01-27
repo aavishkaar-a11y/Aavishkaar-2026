@@ -79,7 +79,7 @@ export function AboutPreview() {
               10+ Events
             </div>
             <div className="absolute -bottom-4 -left-4 px-4 py-2 rounded-full bg-secondary text-secondary-foreground font-medium text-sm shadow-lg shadow-secondary/30">
-              ₹1 Lakh+ Prizes
+              ₹1.5 Lakh+ Prizes
             </div>
           </div>
         </div>

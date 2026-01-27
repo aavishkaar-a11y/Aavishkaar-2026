@@ -35,11 +35,11 @@ export const day1Events: EventData[] = [
       { position: "2nd", amount: "₹2,000" },
       { position: "3rd", amount: "₹1,000" }
     ],
-    fee: "₹400",
+    fee: "₹236 (inclusive 18% GST)",
     coordinators: [
-      { name: "Loganathan M", department: "IT", year: "IV Year", phone: "" },
-      { name: "Darthi Dhanasekar", department: "AI&DS", year: "III Year", phone: "" },
-      { name: "Tharunya Devaraj", department: "AIML", year: "I Year", phone: "" }
+      { name: "Loganathan M", department: "IT", year: "IV Year", phone: "9025643513" },
+      { name: "Darthi Dhanasekar", department: "AI&DS", year: "III Year", phone: "8248832605" },
+      { name: "Tharunya Devaraj", department: "CSE-AIML", year: "I Year", phone: "9940654212" }
     ]
   },
   {
@@ -60,12 +60,12 @@ export const day1Events: EventData[] = [
       { position: "2nd", amount: "₹1,500" },
       { position: "3rd", amount: "₹1,000" }
     ],
-    fee: "₹300",
+    fee: "₹236 (inclusive 18% GST)",
     coordinators: [
-      { name: "S Santhosh Kumar", department: "ECE", year: "IV Year", phone: "" },
-      { name: "Sivaarthigunasekaran", department: "IT", year: "III Year", phone: "" },
-      { name: "D Varun", department: "Chemical", year: "II Year", phone: "" },
-      { name: "Nishu Kumari S", department: "Biotech", year: "I Year", phone: "" }
+      { name: "S Santhosh Kumar", department: "ECE", year: "IV Year", phone: "9384441615" },
+      { name: "Sivaarthi gunasekaran", department: "IT", year: "III Year", phone: "7339025562" },
+      { name: "D Varun", department: "Chemical", year: "II Year", phone: "9363010410" },
+      { name: "Nishu Kumari S", department: "Biotech", year: "I Year", phone: "9940872516" }
     ]
   },
   {
@@ -84,12 +84,12 @@ export const day1Events: EventData[] = [
       { position: "2nd", amount: "₹1,500" },
       { position: "3rd", amount: "₹1,000" }
     ],
-    fee: "₹300",
+    fee: "₹236 (inclusive 18% GST)",
     coordinators: [
-      { name: "Addepalli Vijay Sai", department: "AI&DS", year: "IV Year", phone: "" },
-      { name: "Krishna", department: "Civil", year: "III Year", phone: "" },
-      { name: "Deekshita", department: "ECE", year: "II Year", phone: "" },
-      { name: "Mageshwari", department: "Biotech", year: "I Year", phone: "" }
+      { name: "Addepalli Vijay Sai", department: "AI&DS", year: "IV Year", phone: "9445344740" },
+      { name: "Krishna", department: "Civil", year: "III Year", phone: "8124835538" },
+      { name: "Deekshita", department: "ECE", year: "II Year", phone: "9080566376" },
+      { name: "Mageshwari", department: "Biotech", year: "I Year", phone: "9344430810" }
     ]
   },
   {
@@ -111,12 +111,12 @@ export const day1Events: EventData[] = [
       { position: "2nd", amount: "₹2,000" },
       { position: "3rd", amount: "₹1,000" }
     ],
-    fee: "₹300 per team",
+    fee: "₹472 (inclusive 18% GST)",
     coordinators: [
+      { name: "M K Masthan", regNo: "VH12613", department: "Mechanical", year: "IV Year", phone: "9840553232"},
       { name: "M Samira", regNo: "VH13354", department: "Bio Tech", year: "III Year", phone: "9940463951" },
       { name: "Deepadharshan J", regNo: "VH14414", department: "Chemical", year: "II Year", phone: "7548842151" },
-      { name: "Abhinaya Shri", regNo: "VH14829", department: "AI&DS", year: "I Year", phone: "9150965396" },
-      { name: "M K Masthan", regNo: "VH12613", department: "Mechanical", year: "IV Year", phone: "9840553232" }
+      { name: "Abhinaya Shri", regNo: "VH14829", department: "AI&DS", year: "I Year", phone: "9150965396" }
     ]
   },
   {
@@ -136,9 +136,11 @@ export const day1Events: EventData[] = [
       { position: "2nd", amount: "₹2,000" },
       { position: "3rd", amount: "₹1,000" }
     ],
-    fee: "₹300 per team",
+    fee: "₹472 (inclusive 18% GST)",
     coordinators: [
-      { name: "TBA", department: "TBA", year: "TBA", phone: "" }
+      { name: "jaiya suriya", department: "Bio tech", year: "III", phone: "86680188938" },
+      { name: "Janani BS", department: "AIDS", year: "III", phone: "9025470879" },
+      { name: "Mokshitha G", department: "CSE", year: "I", phone: "9080719418" }
     ]
   },
   {
@@ -159,9 +161,12 @@ export const day1Events: EventData[] = [
       { position: "2nd", amount: "₹3,000" },
       { position: "3rd", amount: "₹2,000" }
     ],
-    fee: "₹1,000 per team",
+    fee: "₹845 (inclusive 18% GST)",
     coordinators: [
-      { name: "TBA", department: "TBA", year: "TBA", phone: "" }
+      { name: "Dhanush M", department: "AI&DS", year: "IV", phone: "7395951642" },
+      { name: "vasanthan M", department: "ECE", year: "III", phone: "6379236504" },
+      { name: "Dharshan S", department: "IT", year: "II", phone: "9080700592" },
+      { name: "Kousalya", department: "MBA", year: "I", phone: "91042041684" }
     ]
   },
   {
@@ -182,12 +187,12 @@ export const day1Events: EventData[] = [
       { position: "Visionary Director", amount: "₹5,000" },
       { position: "Creative Story", amount: "₹3,000" }
     ],
-    fee: "₹1,000 per team",
+    fee: "₹885 (inclusive 18% GST)",
     coordinators: [
-      { name: "Yogasree S", department: "IT", year: "IV Year", phone: "" },
-      { name: "Pradeep Balaji S", department: "Chemical", year: "III Year", phone: "" },
-      { name: "Srilekha S", department: "AI&DS", year: "II Year", phone: "" },
-      { name: "Anish Adhithyan K B", department: "ECE", year: "I Year", phone: "" }
+      { name: "Yogasree S", department: "IT", year: "IV Year", phone: "8778668919" },
+      { name: "Pradeep Balaji S", department: "Chemical", year: "III Year", phone: "9176067315" },
+      { name: "Srilekha S", department: "AI&DS", year: "II Year", phone: "9345301594" },
+      { name: "Anish Adhithyan K B", department: "ECE", year: "I Year", phone: "6374277356" }
     ]
   },
   {
@@ -203,16 +208,17 @@ export const day1Events: EventData[] = [
       "Host decision is final"
     ],
     prizes: [
-      { position: "1st", amount: "₹5,000" },
-      { position: "2nd", amount: "₹3,000" },
-      { position: "3rd", amount: "₹1,000" }
+      { position: "1st", amount: "₹3,500" },
+      { position: "2nd", amount: "₹2,500" },
+      { position: "3rd", amount: "₹2,000" },
+      { position: "Special price", amount: "₹1,000" }
     ],
-    fee: "₹800 per squad",
+    fee: "₹885 (inclusive 18% GST)",
     coordinators: [
-      { name: "Thanigai Raj", department: "TBA", year: "IV Year", phone: "7604973726" },
-      { name: "Lakshanika", department: "TBA", year: "III Year", phone: "7305872675" },
-      { name: "Surendhar", department: "TBA", year: "II Year", phone: "7305167354" },
-      { name: "Navatheepsing", department: "TBA", year: "I Year", phone: "6381687767" }
+      { name: "Thanigai Raj", department: "ECE", year: "IV Year", phone: "7604973726" },
+      { name: "Lakshanika", department: "CSE", year: "III Year", phone: "7305872675" },
+      { name: "Surendhar", department: "AI&DS", year: "II Year", phone: "7305167354" },
+      { name: "Navatheep sing", department: "CSE-AIML", year: "I Year", phone: "6381687767" }
     ]
   }
 ];
@@ -231,18 +237,21 @@ export const day2Events: EventData[] = [
       "Follow safety guidelines"
     ],
     prizes: [
-      { position: "Best Stall", amount: "₹3,000" },
-      { position: "Most Creative", amount: "₹2,000" }
+      { position: "Best Stall", amount: "₹1,500" },
+      { position: "Most Creative", amount: "₹1,000" }
     ],
-    fee: "₹500 per stall",
+    fee: "₹885 (inclusive 18% GST)",
     coordinators: [
-      { name: "TBA", department: "TBA", year: "TBA", phone: "" }
+      { name: "charan B", department: "AI&DS", year: "IV", phone: "8122334200" },
+      { name: "Hethesh P", department: "IT", year: "III", phone: "7904376748" },
+      { name: "Kaviya sri M", department: "Chem", year: "II", phone: "9003759421" },
+      { name: "Kesavan S", department: "MBA", year: "I", phone: "7358481330" }
     ]
   },
   {
     id: "ramp-walk",
-    title: "Ramp Walk",
-    category: "solo",
+    title: "CO-Rporate Walk",
+    category: "group",
     description: "Walk the runway with confidence! Showcase your style in Cosplay or Corporate Walk categories.",
     rules: [
       "Cosplay: 1–2 min performance + explanation",
@@ -257,12 +266,12 @@ export const day2Events: EventData[] = [
       { position: "Best Corporate Walk", amount: "₹2,000" },
       { position: "Runner-up Corporate", amount: "₹1,500" }
     ],
-    fee: "₹300",
+    fee: "₹885 (inclusive 18% GST)",
     coordinators: [
-      { name: "Arjun Hari G", department: "AI&DS", year: "IV Year", phone: "" },
-      { name: "Reshmi V", department: "AIML", year: "III Year", phone: "" },
-      { name: "Sathvika", department: "IT", year: "II Year", phone: "" },
-      { name: "Bhavatharini", department: "ECE", year: "I Year", phone: "" }
+      { name: "Arjun Hari G", department: "AI&DS", year: "IV Year", phone: "7358767625" },
+      { name: "Reshmi V", department: "CSE-AIML", year: "III Year", phone: "7904750287" },
+      { name: "Sathvika Shree S", department: "IT", year: "II Year", phone: "7010877900" },
+      { name: "Bhavatharini A", department: "ECE", year: "I Year", phone: "9319545530" }
     ]
   }
 ];

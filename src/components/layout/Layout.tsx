@@ -12,10 +12,10 @@ export function Layout({ children }: LayoutProps) {
   useScrollToTop();
 
   return (
-    <div className="min-h-screen flex flex-col bg-background cursor-none">
+    <div className="min-h-screen flex flex-col bg-transparent cursor-none">
       <CustomCursor />
       <Navbar />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 relative z-[2]">{children}</main>
       <Footer />
     </div>
   );

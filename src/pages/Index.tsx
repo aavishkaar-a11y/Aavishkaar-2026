@@ -7,6 +7,7 @@ import { ProcessSection } from "@/components/home/ProcessSection";
 import { ParticleBackground } from "@/components/ui/ParticleBackground";
 import { MarqueeText } from "@/components/home/MarqueeText";
 
+
 const Index = () => {
   return (
     <Layout>

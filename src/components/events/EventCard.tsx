@@ -1,6 +1,7 @@
 import { LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
+
 interface EventCardProps {
   id: string;
   title: string;
@@ -12,50 +13,59 @@ interface EventCardProps {
   image?: string;
 }
 
-export function EventCard({ id, title, category, icon: Icon, description, fee, prizes }: EventCardProps) {
+export function EventCard({
+  id,
+  title,
+  category,
+  icon: Icon,
+  description,
+  fee,
+  prizes,
+  image,
+}: EventCardProps) {
   return (
     <Link
       to={`/event/${id}`}
-      className="group event-card glass-card rounded-xl overflow-hidden block"
+      className="group glass-card rounded-xl overflow-hidden block hover:scale-[1.03] transition"
     >
-      {/* Image/Icon Header */}
-      <div className="h-40 relative overflow-hidden bg-gradient-to-br from-primary/20 via-muted to-secondary/20">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Icon className="w-16 h-16 text-primary/50 group-hover:text-primary transition-colors group-hover:scale-110 duration-500" />
-        </div>
-        
-        {/* Category Badge */}
-        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-background/80 backdrop-blur-sm text-xs font-medium text-secondary">
+      {/* IMAGE / ICON */}
+      <div className="h-40 relative overflow-hidden">
+        {image ? (
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/20 via-muted to-secondary/20">
+            <Icon className="w-16 h-16 text-primary/60" />
+          </div>
+        )}
+
+        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-background/80 text-xs font-medium">
           {category}
         </div>
-        
-        {/* Hover overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
-      {/* Content */}
+      {/* CONTENT */}
       <div className="p-5">
-        <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+        <h3 className="text-lg font-semibold mb-2 group-hover:text-primary">
           {title}
         </h3>
-        <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+
+        <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
           {description}
         </p>
 
-        {/* Prize & Fee */}
-        <div className="flex items-center justify-between text-sm">
+        <div className="flex justify-between text-sm">
           <span className="text-primary font-medium">
-            ₹{prizes[0]?.replace(/[^0-9]/g, "") || "TBA"}
+            💰 Prize ₹{prizes[0]?.replace(/[^0-9]/g, "") || "TBA"}
           </span>
-          <span className="text-muted-foreground">
-            Entry: {fee}
-          </span>
+          <span className="text-muted-foreground">Entry: {fee}</span>
         </div>
 
-        {/* View Details Arrow */}
-        <div className="mt-4 flex items-center gap-2 text-secondary text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-          View Details
-          <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+        <div className="mt-4 text-secondary text-sm opacity-0 group-hover:opacity-100 transition">
+          View Details →
         </div>
       </div>
     </Link>

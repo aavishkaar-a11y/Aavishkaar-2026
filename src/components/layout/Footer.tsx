@@ -82,14 +82,27 @@ export function Footer() {
                 <Phone size={16} />
                 +91 44 2684 0129
               </a>
-              <div className="flex gap-4 pt-2">
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Instagram size={20} />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Youtube size={20} />
-                </a>
-              </div>
+             <div className="flex gap-4 pt-2">
+  <a
+    href="https://www.instagram.com/life_at_vtht"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-muted-foreground hover:text-pink-500 transition-colors"
+    aria-label="Instagram"
+  >
+    <Instagram size={20} />
+  </a>
+
+  <a
+    href="https://www.youtube.com/channel/UC-9Ir_kBKGjq6j6ThCMDk7w"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-muted-foreground hover:text-red-500 transition-colors"
+    aria-label="YouTube"
+  >
+    <Youtube size={20} />
+  </a>
+</div>
             </div>
           </div>
 
@@ -109,7 +122,7 @@ export function Footer() {
             </div>
             <div className="rounded-lg overflow-hidden border border-border/50 neon-border-blue">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.4!2d80.1!3d13.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA2JzAwLjAiTiA4MMKwMDYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.581956750222!2d80.10184697492227!3d13.188737487146948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5287e728c5c629%3A0x5126c6875672ddbb!2s54Q3%2BFQV%2C%20Morai%2C%20Tamil%20Nadu%20600055!5e0!3m2!1sen!2sin!4v1769319183485!5m2!1sen!2sin"
                 width="100%"
                 height="120"
                 style={{ border: 0 }}

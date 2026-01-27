@@ -2,102 +2,165 @@ import { Layout } from "@/components/layout/Layout";
 import { EventCard } from "@/components/events/EventCard";
 import { day2Events } from "@/data/events";
 import { ScrollAnimation } from "@/components/ui/ScrollAnimation";
-import { Store, Sparkles, Phone } from "lucide-react";
+import {
+  ShoppingBag,
+  Star,
+  Users,
+  User,
+  Phone,
+} from "lucide-react";
 
+/* 🔥 EVENT IMAGES */
+import stallImg from "@/assets/events/stall.jpg";
+import rampWalkImg from "@/assets/events/ramp-walk.jpg";
+
+/* 🎯 ICON MAP */
 const eventIcons: Record<string, any> = {
-  "stall": Store,
-  "ramp-walk": Sparkles,
+  stall: ShoppingBag,
+  "ramp-walk": Star,
 };
 
+/* 🖼 IMAGE MAP */
+const eventImages: Record<string, string> = {
+  stall: stallImg,
+  "ramp-walk": rampWalkImg,
+};
+
+/* 👨‍🏫 FACULTY COORDINATOR */
 const facultyCoordinators = [
-  { 
-    name: "Dr. M. Gopinath", 
-    role: "Dean - Cultural Club's and Activities (CCA)", 
-    phone: "9994041130" 
+  {
+    name: "Dr. M. Gopinath",
+    role: "Dean - Cultural Club's and Activities (CCA)",
+    phone: "9994041130",
   },
 ];
 
-const hods = [
-  { name: "Dr. D.S. Manoj Kumar", role: "Head - AIML" },
-  { name: "Mrs. L. Geetha", role: "Head - AI&DS" },
-];
-
 const Day2 = () => {
+  const soloEvents = day2Events.filter(e => e.category === "solo");
+  const groupEvents = day2Events.filter(e => e.category === "group");
+
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="pt-12 pb-16 relative overflow-hidden thunder-bg">
-        <div className="container mx-auto px-4 relative z-10">
-          <ScrollAnimation>
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="font-samarkan text-5xl md:text-7xl neon-blue mb-6">
-                Day 2
-              </h1>
-              <p className="text-secondary font-medium mb-2 tracking-widest uppercase text-sm">
-                March 14th, 2026
-              </p>
-              <p className="text-foreground/80 text-lg leading-relaxed">
-                Grand showcase featuring Creative Stalls and the spectacular Ramp Walk
-              </p>
-            </div>
-          </ScrollAnimation>
-        </div>
-      </section>
+      {/* 🎥 FULL PAGE BACKGROUND VIDEO */}
+      <div className="relative min-h-screen">
 
-      {/* Faculty Coordinator */}
-      <section className="py-12 relative">
-        <div className="container mx-auto px-4">
-          <ScrollAnimation delay={100}>
-            <div className="max-w-3xl mx-auto">
-              {facultyCoordinators.map((coord) => (
-                <div key={coord.name} className="glass-card rounded-xl p-6 text-center neon-border-blue mb-8">
-                  <h3 className="text-primary font-semibold text-xl mb-2">Faculty Coordinator</h3>
-                  <p className="text-foreground text-lg font-medium">{coord.name}</p>
-                  <p className="text-muted-foreground">{coord.role}</p>
-                  <div className="flex items-center justify-center gap-2 mt-3 text-secondary">
+        {/* VIDEO (FIXED BEHIND EVERYTHING) */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="
+            fixed top-0 left-0
+            w-screen h-screen
+            object-cover object-center
+            -z-20
+          "
+        >
+          <source src="/videos/day2-bg.mp4" type="video/mp4" />
+        </video>
+
+        {/* DARK OVERLAY */}
+        <div className="fixed inset-0 bg-black/65 -z-10" />
+
+        {/* ================= PAGE CONTENT ================= */}
+        <div className="relative z-10 pt-28">
+
+          {/* HEADER TEXT */}
+          <section className="pb-20">
+            <div className="container mx-auto px-4">
+              <ScrollAnimation>
+                <div className="text-center max-w-3xl mx-auto">
+                  <h1 className="font-samarkan text-5xl md:text-7xl neon-blue mb-6">
+                    Day 2
+                  </h1>
+                  <p className="text-secondary uppercase tracking-widest text-sm mb-2">
+                    March 14th, 2026
+                  </p>
+                  <p className="text-foreground/80 text-lg">
+                    Creative Stalls • Ramp Walk • Showcase
+                  </p>
+                </div>
+              </ScrollAnimation>
+            </div>
+          </section>
+
+          {/* FACULTY COORDINATOR */}
+          <section className="py-10">
+            <div className="container mx-auto px-4">
+              {facultyCoordinators.map(c => (
+                <div
+                  key={c.name}
+                  className="glass-card max-w-xl mx-auto p-6 text-center neon-border-blue"
+                >
+                  <p className="text-primary font-semibold">Faculty Coordinator</p>
+                  <p className="text-lg font-medium">{c.name}</p>
+                  <p className="text-muted-foreground">{c.role}</p>
+
+                  <a
+                    href={`tel:${c.phone}`}
+                    className="flex justify-center items-center gap-2 mt-3 text-secondary hover:underline"
+                  >
                     <Phone size={16} />
-                    <span>{coord.phone}</span>
-                  </div>
+                    {c.phone}
+                  </a>
                 </div>
               ))}
+            </div>
+          </section>
 
-              {/* HODs */}
-              <div className="grid md:grid-cols-2 gap-6">
-                {hods.map((hod, index) => (
-                  <ScrollAnimation key={hod.name} delay={200 + index * 100}>
-                    <div className="glass-card rounded-xl p-6 text-center neon-border-blue">
-                      <h3 className="text-primary font-semibold text-lg mb-2">Faculty Coordinator</h3>
-                      <p className="text-foreground font-medium">{hod.name}</p>
-                      <p className="text-muted-foreground text-sm">{hod.role}</p>
-                    </div>
+          {/* SOLO EVENTS */}
+          <section className="py-12">
+            <div className="container mx-auto px-4">
+             
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {soloEvents.map((e, i) => (
+                  <ScrollAnimation key={e.id} delay={i * 100}>
+                    <EventCard
+                      id={e.id}
+                      title={e.title}
+                      category="Solo"
+                      icon={eventIcons[e.id]}
+                      image={eventImages[e.id]}
+                      description={e.description}
+                      fee={e.fee}
+                      prizes={e.prizes.map(p => `₹${p.amount}`)}
+                    />
                   </ScrollAnimation>
                 ))}
               </div>
             </div>
-          </ScrollAnimation>
-        </div>
-      </section>
+          </section>
 
-      {/* Events */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4">
-          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {day2Events.map((event, index) => (
-              <ScrollAnimation key={event.id} delay={index * 150}>
-                <EventCard
-                  id={event.id}
-                  title={event.title}
-                  category={event.category === "solo" ? "Solo" : "Group"}
-                  icon={eventIcons[event.id] || Store}
-                  description={event.description}
-                  fee={event.fee}
-                  prizes={event.prizes.map((p) => p.amount)}
-                />
-              </ScrollAnimation>
-            ))}
-          </div>
+          {/* GROUP EVENTS */}
+          <section className="py-12 pb-24">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl font-semibold mb-8 flex gap-2">
+                <Users /> Group Events
+              </h2>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {groupEvents.map((e, i) => (
+                  <ScrollAnimation key={e.id} delay={i * 100}>
+                    <EventCard
+                      id={e.id}
+                      title={e.title}
+                      category="Group"
+                      icon={eventIcons[e.id]}
+                      image={eventImages[e.id]}
+                      description={e.description}
+                      fee={e.fee}
+                      prizes={e.prizes.map(p => `₹${p.amount}`)}
+                    />
+                  </ScrollAnimation>
+                ))}
+              </div>
+            </div>
+          </section>
+
         </div>
-      </section>
+      </div>
     </Layout>
   );
 };

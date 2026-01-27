@@ -33,7 +33,7 @@ useEffect(() => {
 
     // Auto-skip after video ends or after 15 seconds max
 
-    return () => clearTimeout(timeout);
+
   }, []);
 
   const handleSkip = () => {

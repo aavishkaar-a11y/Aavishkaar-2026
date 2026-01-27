@@ -29,7 +29,7 @@ const highlights = [
   {
     icon: Trophy,
     title: "Prizes",
-    subtitle: "Worth ₹1 Lakh+",
+    subtitle: "Worth ₹1.5 Lakh+",
     description: "Exciting cash prizes and recognition for winners",
     path: "/day-1",
     color: "secondary",
