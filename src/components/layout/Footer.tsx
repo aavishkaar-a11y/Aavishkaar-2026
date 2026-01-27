@@ -76,11 +76,18 @@ export function Footer() {
                 aavishkar@veltech.edu.in
               </a>
               <a
-                href="tel:+914426840129"
+                href="tel:+916369453279"
                 className="flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors text-sm"
               >
                 <Phone size={16} />
-                +91 44 2684 0129
+                +91 6369453279
+              </a>
+              <a
+                href="tel:+917010877900"
+                className="flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors text-sm"
+              >
+                <Phone size={16} />
+                +91 7010877900
               </a>
              <div className="flex gap-4 pt-2">
   <a
