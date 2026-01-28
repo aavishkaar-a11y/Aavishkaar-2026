@@ -136,7 +136,7 @@ const AboutEvent = () => {
               {[
                 { value: "2", label: "Days" },
                 { value: "10+", label: "Events" },
-                { value: "₹1L+", label: "In Prizes" },
+                { value: "₹1.5L+", label: "In Prizes" },
                 { value: "1000+", label: "Participants" },
               ].map((stat, index) => (
                 <ScrollAnimation key={stat.label} delay={index * 100}>

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollAnimation } from "@/components/ui/ScrollAnimation";
 import { eventForms } from "@/data/eventForms";
 import { eventFormMap } from "@/data/eventFormMap";
+import { eventPosters } from "@/data/eventPosters";
 import {
   ArrowLeft,
   Trophy,
@@ -25,6 +26,7 @@ const EventDetail = () => {
   // Google Form link & form type (SAFE)
   const formLink = id ? eventForms[id] : undefined;
   const formType = id ? eventFormMap[id] : undefined;
+  const posterImage = id ? eventPosters[id] : undefined;
 
   const handleBackClick = () => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -110,17 +112,24 @@ const EventDetail = () => {
               <div className="lg:col-span-2 space-y-8">
 
                 {/* POSTER */}
-                <ScrollAnimation>
-                  <div className="glass-card rounded-xl overflow-hidden">
-                    <div className="aspect-video bg-black/40 flex items-center justify-center">
-                      <div className="text-center">
-                        <ImageIcon className="mx-auto mb-2 text-primary/50" size={48} />
-                        <p className="font-semibold">Event Poster</p>
-                        <p className="text-muted-foreground text-sm">Coming Soon</p>
-                      </div>
-                    </div>
-                  </div>
-                </ScrollAnimation>
+               <ScrollAnimation>
+  <div className="glass-card rounded-xl overflow-hidden">
+    {posterImage ? (
+      <img
+        src={posterImage}
+        alt={`${event.title} Poster`}
+        className="w-full h-full object-cover"
+      />
+    ) : (
+      <div className="aspect-video bg-black/40 flex items-center justify-center">
+        <div className="text-center">
+          <ImageIcon className="mx-auto mb-2 text-primary/50" size={48} />
+          <p className="font-semibold">Poster not available</p>
+        </div>
+      </div>
+    )}
+  </div>
+</ScrollAnimation>
 
                 {/* RULES */}
                 <ScrollAnimation delay={100}>
