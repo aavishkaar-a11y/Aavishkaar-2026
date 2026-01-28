@@ -1,6 +1,6 @@
 export const eventPosters: Record<string, string> = {
   "connexions": "/poster/connexion.jpeg",
-  "ramp-walk": "/poster/rampwalk.jpeg",
+  "ramp-walk-": "/poster/rampwalk.jpeg",
   "esports": "/poster/esport.jpeg",
   "group-dance": "/poster/group-dance.jpeg",
   "haunt-hunt": "/poster/haunt-hunt.jpeg",
