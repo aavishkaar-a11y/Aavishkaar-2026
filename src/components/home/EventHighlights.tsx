@@ -31,7 +31,7 @@ const highlights = [
     title: "Prizes",
     subtitle: "Worth ₹1.5 Lakh+",
     description: "Exciting cash prizes and recognition for winners",
-    path: "/day-1",
+    path: "/prizes",
     color: "secondary",
   },
 ];

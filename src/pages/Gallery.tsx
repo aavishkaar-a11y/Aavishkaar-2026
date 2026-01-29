@@ -28,28 +28,34 @@ import img21 from "@/assets/gallery/img21.jpg";
 import img22 from "@/assets/gallery/img22.jpg";
 import img23 from "@/assets/gallery/img23.jpg";
 import img24 from "@/assets/gallery/img24.jpg";
+
 const galleryItems = [
-  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
-  img11, img12, img13, img14, img15, img16, img17, img18, img19,
-  img20, img21, img22, img23, img24
+  img1, img2, img3, img4, img5, img6,
+  img7, img8, img9, img10, img11, img12,
+  img13, img14, img15, img16, img17, img18,
+  img19, img20, img21, img22, img23, img24
 ];
 
-const Gallery = () => {
+export default function Gallery() {
   const [current, setCurrent] = useState(0);
   const [lightbox, setLightbox] = useState<number | null>(null);
 
+  const isMobile =
+    typeof window !== "undefined" && window.innerWidth < 768;
+
   /* AUTO SLIDE */
   useEffect(() => {
-    const timer = setInterval(
-      () => setCurrent((p) => (p + 1) % galleryItems.length),
-      4000
-    );
+    const timer = setInterval(() => {
+      setCurrent((p) => (p + 1) % galleryItems.length);
+    }, isMobile ? 5000 : 3500);
+
     return () => clearInterval(timer);
-  }, []);
+  }, [isMobile]);
 
   return (
     <Layout>
-      <div className="relative min-h-screen">
+      <div className="relative min-h-screen overflow-hidden">
+
         {/* 🎥 BG VIDEO */}
         <video
           autoPlay
@@ -72,28 +78,57 @@ const Gallery = () => {
               GALLERY
             </h1>
             <p className="text-muted-foreground text-base sm:text-lg">
-              Relive the moments of AAVISHKAR
+              Relive the moments of AAVISHKAAR
             </p>
           </ScrollAnimation>
         </section>
 
-        {/* ================= SLIDESHOW ================= */}
-        <section className="py-10 relative z-10">
+        {/* ================= CINEMATIC SLIDESHOW ================= */}
+        <section className="py-16 relative z-10 overflow-hidden">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden neon-border-yellow">
-              <img
-                src={galleryItems[current]}
-                className="w-full h-full object-cover"
-              />
+            <div className="relative h-[260px] sm:h-[380px] flex items-center justify-center">
+              {galleryItems.map((img, i) => {
+                const offset =
+                  (i - current + galleryItems.length) % galleryItems.length;
+
+                let scale = "scale-75 opacity-0";
+                let translate = "translate-x-0 z-0";
+
+                if (offset === 0) {
+                  scale = "scale-100 opacity-100";
+                  translate = "translate-x-0 z-20";
+                } else if (offset === 1) {
+                  scale = "scale-90 opacity-60";
+                  translate = "translate-x-[55%] z-10";
+                } else if (offset === galleryItems.length - 1) {
+                  scale = "scale-90 opacity-60";
+                  translate = "-translate-x-[55%] z-10";
+                }
+
+                return (
+                  <img
+                    key={i}
+                    src={img}
+                    onClick={() => setCurrent(i)}
+                    className={`
+                      absolute rounded-xl shadow-2xl cursor-pointer
+                      transition-all duration-700 ease-[cubic-bezier(.4,0,.2,1)]
+                      ${scale} ${translate}
+                      w-[72%] sm:w-[56%] h-full object-cover
+                    `}
+                  />
+                );
+              })}
 
               {/* LEFT */}
               <button
                 onClick={() =>
                   setCurrent(
-                    (current - 1 + galleryItems.length) % galleryItems.length
+                    (current - 1 + galleryItems.length) %
+                      galleryItems.length
                   )
                 }
-                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 glass-card p-2 sm:p-3 rounded-full"
+                className="absolute left-3 sm:left-8 z-30 glass-card p-3 rounded-full"
               >
                 <ChevronLeft size={22} />
               </button>
@@ -103,14 +138,14 @@ const Gallery = () => {
                 onClick={() =>
                   setCurrent((current + 1) % galleryItems.length)
                 }
-                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 glass-card p-2 sm:p-3 rounded-full"
+                className="absolute right-3 sm:right-8 z-30 glass-card p-3 rounded-full"
               >
                 <ChevronRight size={22} />
               </button>
             </div>
 
             {/* THUMBNAILS */}
-            <div className="flex gap-2 mt-4 overflow-x-auto scrollbar-hide justify-center">
+            <div className="flex gap-2 mt-6 overflow-x-auto scrollbar-hide justify-center">
               {galleryItems.map((img, i) => (
                 <img
                   key={i}
@@ -169,9 +204,15 @@ const Gallery = () => {
             />
           </div>
         )}
+
+        {/* ================= EXTRA STYLES ================= */}
+        <style>{`
+          .glass-card {
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(8px);
+          }
+        `}</style>
       </div>
     </Layout>
   );
-};
-
-export default Gallery;
+}

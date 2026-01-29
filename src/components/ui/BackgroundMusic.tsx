@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
-import bgMusic from "@/assets/The_Metro_Proposal_256kbps.webm";
+import bgMusic from "@/assets/23 Theme.mp3";
 
 
 const BackgroundMusic = () => {
