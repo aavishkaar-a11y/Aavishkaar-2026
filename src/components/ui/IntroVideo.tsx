@@ -1,104 +1,108 @@
-import { useState, useEffect, useRef } from "react";
-import strangerthingsVideo from "@/assets/Aaviskaartrailer.mp4";
+import { useEffect, useRef, useState } from "react";
+import introVideo from "@/assets/Aaviskaartrailer.mp4";
 
 export function IntroVideo() {
-  const [showIntro, setShowIntro] = useState(true);
-  const [fadeOut, setFadeOut] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [hasStarted, setHasStarted] = useState(false);
-  const [screenType, setScreenType] = useState<"mobile" | "tablet" | "desktop">("desktop");
 
-useEffect(() => {
-  const checkScreen = () => {
-    const width = window.innerWidth;
+  const [showIntro, setShowIntro] = useState(true);
+  const [started, setStarted] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-    if (width < 640) setScreenType("mobile");
-    else if (width < 1024) setScreenType("tablet");
-    else setScreenType("desktop");
-  };
-
-  checkScreen();
-  window.addEventListener("resize", checkScreen);
-  return () => window.removeEventListener("resize", checkScreen);
-}, []);
-
-
+  /* Detect screen */
   useEffect(() => {
-    // Check if intro was already shown in this session
-    const introShown = sessionStorage.getItem("introShown");
-    if (introShown) {
-      setShowIntro(false);
-      return;
-    }
-
-    // Auto-skip after video ends or after 15 seconds max
-
-
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
   }, []);
 
-  const handleSkip = () => {
-    setFadeOut(true);
-    setTimeout(() => {
+  /* Skip if already shown */
+  useEffect(() => {
+    if (sessionStorage.getItem("introShown")) {
       setShowIntro(false);
-      sessionStorage.setItem("introShown", "true");
-    }, 1000);
+    }
+  }, []);
+
+  /* START VIDEO + AUDIO (USER GESTURE) */
+  const startVideo = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    try {
+      video.muted = false; // 🔊 ENABLE AUDIO
+      video.volume = 1;
+      video.currentTime = 0;
+      await video.play();
+      setStarted(true);
+    } catch (err) {
+      console.error("Playback blocked:", err);
+    }
   };
 
-  const handleVideoEnd = () => {
-    handleSkip();
+  const endIntro = () => {
+    setFadeOut(true);
+    setTimeout(() => {
+      sessionStorage.setItem("introShown", "true");
+      setShowIntro(false);
+    }, 700);
   };
 
   if (!showIntro) return null;
 
   return (
     <div
-       className={`fixed top-0 left-0 w-screen h-screen z-[9999] bg-black flex items-center justify-center transition-opacity duration-1000  ${
+      className={`fixed inset-0 z-[9999] bg-black transition-opacity duration-700 ${
         fadeOut ? "opacity-0" : "opacity-100"
       }`}
     >
-    <div>{!hasStarted && (
-  <div
-    onClick={() => {
-      setHasStarted(true);
-      videoRef.current?.play();
-    }}
-    className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/80 text-center cursor-pointer"
-  >
-    <p className="text-secondary text-sm tracking-widest uppercase mb-2">
-      Tap to Start
-    </p>
-    <p className="text-primary text-lg font-semibold">
-      Experience AAVISHKAAR 2026
-    </p>
-  </div>
-)}
-</div>
-      {/* Video */}
+      {/* TAP TO START */}
+      {!started && (
+        <div
+          onClick={startVideo}
+          className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/90 text-center cursor-pointer px-4"
+        >
+          <p className="text-yellow-400 tracking-widest text-sm mb-2">
+            TAP TO START
+          </p>
+          <p className="text-yellow-300 text-lg sm:text-xl font-semibold">
+            Experience AAVISHKAAR 2026
+          </p>
+          <p className="text-xs text-muted-foreground mt-3">
+            Sound ON • Best experience
+          </p>
+        </div>
+      )}
+
+      {/* VIDEO */}
       <video
-  ref={videoRef}
-  className={`w-full h-full ${
-    screenType === "desktop" ? "object-cover" : "object-contain"
-  }`}
-  playsInline
-  onEnded={handleSkip}
->
+        ref={videoRef}
+        src={introVideo}
+        playsInline
+        webkit-playsinline="true"
+        preload="auto"
+        onEnded={endIntro}
+        className={`w-full h-full ${
+          isMobile ? "object-contain" : "object-cover"
+        }`}
+        style={{
+          transform: "translateZ(0)",
+          willChange: "transform",
+        }}
+      />
 
-        <source src={strangerthingsVideo} type="video/mp4" />
-      </video>
-
-      {/* Scanlines overlay */}
-      <div className="absolute inset-0 pointer-events-none scanlines opacity-30" />
-
-      {/* Skip button */}
+      {/* SKIP */}
       <button
-        onClick={handleSkip}
-        className="absolute bottom-8 right-8 px-6 py-3 bg-black/60 border border-secondary/50 text-secondary hover:bg-secondary/20 hover:border-secondary transition-all duration-300 text-sm tracking-widest uppercase font-medium backdrop-blur-sm"
+        onClick={endIntro}
+        className="absolute bottom-6 right-6 z-30 px-5 py-2 text-yellow-400 border border-yellow-400/60 bg-black/60 text-xs tracking-widest uppercase backdrop-blur"
       >
-        Skip Intro
+        Skip
       </button>
 
-      {/* Vignette */}
-      <div className="absolute inset-0 pointer-events-none vignette" />
+      {/* MOBILE SAFE GRADIENT */}
+      {isMobile && (
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
+      )}
     </div>
   );
 }
