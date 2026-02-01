@@ -7,9 +7,12 @@ import {
   Users,
   Clock,
   MapPin,
+  Import,
 } from "lucide-react";
 import { ScrollAnimation } from "@/components/ui/ScrollAnimation";
 import { CountdownTimer } from "@/components/home/CountdownTimer";
+import proShowPoster from "@/assets/pro-show.jpeg";
+
 
 const Concert = () => {
   return (
@@ -64,17 +67,18 @@ const Concert = () => {
               </ScrollAnimation>
 
               {/* POSTER */}
-              <ScrollAnimation delay={300}>
-                <div className="max-w-2xl mx-auto mb-12">
-                  <div className="aspect-[3/4] rounded-2xl neon-border-yellow overflow-hidden bg-black/40 flex items-center justify-center">
-                    <div className="text-center p-8">
-                      <ImageIcon className="text-primary/50 mx-auto mb-4" size={80} />
-                      <p className="text-xl font-semibold mb-2">Concert Poster</p>
-                      <p className="text-muted-foreground">Coming Soon</p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollAnimation>
+        <ScrollAnimation delay={300}>
+  <div className="w-full max-w-4xl mx-auto mb-12 px-4">
+    <div className="rounded-2xl neon-border-yellow overflow-hidden bg-black/40">
+      <img
+        src={proShowPoster}
+        alt="Pro Show Poster"
+        className="w-full h-auto object-contain"
+      />
+    </div>
+  </div>
+</ScrollAnimation>
+
 
               {/* COMING SOON */}
               <ScrollAnimation delay={400}>
