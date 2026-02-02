@@ -73,7 +73,7 @@ export function Footer() {
                 className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
               >
                 <Mail size={16} />
-                aavishkar@veltech.edu.in
+                aavishkaar@velhightech.com
               </a>
               <a
                 href="tel:+919363972364"
