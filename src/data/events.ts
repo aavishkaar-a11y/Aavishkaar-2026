@@ -39,6 +39,7 @@ export const day1Events: EventData[] = [
     coordinators: [
       { name: "Loganathan M", department: "IT", year: "IV Year", phone: "9025643513" },
       { name: "Darthi Dhanasekar", department: "AI&DS", year: "III Year", phone: "8248832605" },
+      { name : "kopika Balaji", department: "ECE", year : "II Year" , phone : "9043051964"},
       { name: "Tharunya Devaraj", department: "CSE-AIML", year: "I Year", phone: "9940654212" }
     ]
   },
@@ -86,10 +87,10 @@ export const day1Events: EventData[] = [
     ],
     fee: "₹236 (inclusive 18% GST)",
     coordinators: [
-      { name: "Addepalli Vijay Sai", department: "AI&DS", year: "IV Year", phone: "9445344740" },
+      { name: "Venanshiya B", department: "ECE", year: "IV Year", phone: "6369453279" },
       { name: "Krishna", department: "Civil", year: "III Year", phone: "8124835538" },
-      { name: "Deekshita", department: "ECE", year: "II Year", phone: "9080566376" },
-      { name: "Mageshwari", department: "Biotech", year: "I Year", phone: "9344430810" }
+      { name: "Deekshita K R", department: "ECE", year: "II Year", phone: "9080566376" },
+      { name: "Magishwari", department: "Biotech", year: "I Year", phone: "9344430810" }
     ]
   },
   {
@@ -138,9 +139,10 @@ export const day1Events: EventData[] = [
     ],
     fee: "₹472 (inclusive 18% GST)",
     coordinators: [
-      { name: "jaiya suriya", department: "Bio tech", year: "III", phone: "86680188938" },
-      { name: "Janani BS", department: "AIDS", year: "III", phone: "9025470879" },
-      { name: "Mokshitha G", department: "CSE", year: "I", phone: "9080719418" }
+      { name: "Sanjay M", department: "ECE", year: "IV", phone: "9884802322" },
+      { name: "Pradeep Balaji", department: "Chem", year: "III", phone: "9176067315" },
+      { name: "Karthika M", department: "CSE", year: "II", phone: "7395834352" },
+      {name : "Mokshitha G", department : "", year : "I", phone : "9080719418"}
     ]
   },
   {
@@ -190,7 +192,7 @@ export const day1Events: EventData[] = [
     fee: "₹885 (inclusive 18% GST)",
     coordinators: [
       { name: "Yogasree S", department: "IT", year: "IV Year", phone: "8778668919" },
-      { name: "Pradeep Balaji S", department: "Chemical", year: "III Year", phone: "9176067315" },
+      { name: "Balla Swaminathan M", department: "Chemical", year: "III Year", phone: "6380335438" },
       { name: "Srilekha S", department: "AI&DS", year: "II Year", phone: "9345301594" },
       { name: "Anish Adhithyan K B", department: "ECE", year: "I Year", phone: "6374277356" }
     ]
