@@ -1,44 +1,122 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- BASIC META -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#facc15" />
 
-    <!-- Font -->
+    <!-- GOOGLE FONT -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Samarkan&display=swap"
     />
 
-    <!-- Title & SEO -->
-    <title>AAVISHKAR 2026 | Vel Tech High Tech Engineering College</title>
+    <!-- 🔥 SEO TITLE (HIGH INTENT + KEYWORDS) -->
+    <title>
+      AAVISHKAAR 2026 | Vel Tech High Tech Engineering College Cultural Fest Chennai
+    </title>
+
+    <!-- 🔍 SEO DESCRIPTION -->
     <meta
       name="description"
-      content="AAVISHKAR 2026 - The ultimate cultural fest celebrating talent, creativity, and culture."
+      content="AAVISHKAAR 2026 is the grand inter-college cultural fest of Vel Tech High Tech Engineering College, Chennai. Join 2 days of dance, music, pro show, competitions, workshops, gaming, and cultural celebrations on March 13 & 14, 2026."
     />
-    <meta name="author" content="Vel Tech High Tech Engineering College" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="AAVISHKAR 2026 | The Ultimate Cultural Fest" />
+    <!-- 🔑 SEO KEYWORDS -->
+    <meta
+      name="keywords"
+      content="
+        AAVISHKAAR 2026,
+        Vel Tech High Tech Engineering College cultural fest,
+        college cultural fest Chennai,
+        inter college cultural fest 2026,
+        engineering college fest Chennai,
+        pro show Chennai college fest,
+        dance competition college fest,
+        music fest engineering college,
+        AAVISHKAAR fest events,
+        Vel Tech fest 2026
+      "
+    />
+
+    <meta name="author" content="Vel Tech High Tech Engineering College, Chennai" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- 📍 GEO / LOCAL SEO -->
+    <meta name="geo.region" content="IN-TN" />
+    <meta name="geo.placename" content="Chennai" />
+    <meta name="geo.position" content="13.0827;80.2707" />
+    <meta name="ICBM" content="13.0827, 80.2707" />
+
+    <!-- 🌐 CANONICAL -->
+    <U
+    <link rel="canonical" href="https://aavishkaar2026.veltech.edu.in/" />
+
+    <!-- 🟦 OPEN GRAPH (FACEBOOK / WHATSAPP) -->
+    <meta property="og:title" content="AAVISHKAAR 2026 | Vel Tech High Tech Engineering College Cultural Fest" />
     <meta
       property="og:description"
-      content="Two days of non-stop entertainment, creativity, and cultural celebration at Vel Tech."
+      content="Experience the biggest college cultural fest in Chennai! AAVISHKAAR 2026 at Vel Tech High Tech Engineering College features dance, music, pro show, competitions & more."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aavishkaar2026.veltech.edu.in/" />
     <meta property="og:image" content="/LOGO.png" />
+    <meta property="og:image:alt" content="AAVISHKAAR 2026 Cultural Fest Poster" />
+    <meta property="og:site_name" content="AAVISHKAAR 2026" />
+    <meta property="og:locale" content="en_IN" />
 
-    <!-- Twitter -->
+    <!-- 🐦 TWITTER SEO -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@VelTech" />
+    <meta name="twitter:title" content="AAVISHKAAR 2026 | Vel Tech Cultural Fest" />
+    <meta
+      name="twitter:description"
+      content="The grand cultural festival of Vel Tech High Tech Engineering College, Chennai. March 13 & 14, 2026."
+    />
     <meta name="twitter:image" content="/LOGO.png" />
+    <meta name="twitter:site" content="@VelTech" />
 
-    <!-- Favicon -->
+    <!-- 🏫 STRUCTURED DATA (GOOGLE EVENT SEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "AAVISHKAAR 2026",
+        "startDate": "2026-03-13",
+        "endDate": "2026-03-14",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Vel Tech High Tech Engineering College",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Chennai",
+            "addressRegion": "Tamil Nadu",
+            "addressCountry": "IN"
+          }
+        },
+        "image": ["/LOGO.png"],
+        "description": "AAVISHKAAR 2026 is a two-day inter-college cultural fest featuring dance, music, pro show, competitions, and celebrations.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "Vel Tech High Tech Engineering College",
+          "url": "https://veltech.edu.in"
+        }
+      }
+    </script>
+
+    <!-- 🖼 FAVICON -->
     <link rel="icon" type="image/png" href="/LOGO.png" />
   </head>
 
   <body>
     <div id="root"></div>
+
+    <!-- MAIN APP -->
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- PAYMENT -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   </body>
 </html>

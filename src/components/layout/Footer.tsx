@@ -76,11 +76,11 @@ export function Footer() {
                 aavishkar@veltech.edu.in
               </a>
               <a
-                href="tel:+916369453279"
+                href="tel:+919363972364"
                 className="flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors text-sm"
               >
                 <Phone size={16} />
-                +91 6369453279
+                +91 9363972364
               </a>
               <a
                 href="tel:+917010877900"

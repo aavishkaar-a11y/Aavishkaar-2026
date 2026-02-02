@@ -87,10 +87,10 @@ export const day1Events: EventData[] = [
     ],
     fee: "₹236 (inclusive 18% GST)",
     coordinators: [
-      { name: "Venanshiya B", department: "ECE", year: "IV Year", phone: "6369453279" },
-      { name: "Krishna", department: "Civil", year: "III Year", phone: "8124835538" },
+      { name: "Venanshiya P", department: "ECE", year: "IV Year", phone: "6369453279" },
+      { name: "Krishna K", department: "Civil", year: "III Year", phone: "8124835538" },
       { name: "Deekshita K R", department: "ECE", year: "II Year", phone: "9080566376" },
-      { name: "Magishwari", department: "Biotech", year: "I Year", phone: "9344430810" }
+      { name: "Magishwari M", department: "Biotech", year: "I Year", phone: "9344430810" }
     ]
   },
   {
@@ -114,8 +114,8 @@ export const day1Events: EventData[] = [
     ],
     fee: "₹472 (inclusive 18% GST)",
     coordinators: [
-      { name: "M K Masthan", regNo: "VH12613", department: "Mechanical", year: "IV Year", phone: "9840553232"},
-      { name: "M Samira", regNo: "VH13354", department: "Bio Tech", year: "III Year", phone: "9940463951" },
+      { name: "Masthan M K", regNo: "VH12613", department: "Mechanical", year: "IV Year", phone: "9840553232"},
+      { name: "Samira M", regNo: "VH13354", department: "Bio Tech", year: "III Year", phone: "9940463951" },
       { name: "Deepadharshan J", regNo: "VH14414", department: "Chemical", year: "II Year", phone: "7548842151" },
       { name: "Abhinaya Shri", regNo: "VH14829", department: "AI&DS", year: "I Year", phone: "9150965396" }
     ]
@@ -141,8 +141,8 @@ export const day1Events: EventData[] = [
     coordinators: [
       { name: "Sanjay M", department: "ECE", year: "IV", phone: "9884802322" },
       { name: "Pradeep Balaji", department: "Chem", year: "III", phone: "9176067315" },
-      { name: "Karthika M", department: "CSE", year: "II", phone: "7395834352" },
-      {name : "Mokshitha G", department : "", year : "I", phone : "9080719418"}
+      { name: "Kirthika V M", department: "AI&DS", year: "II", phone: "7395834352" },
+      {name : "Mokshitha G", department : "CSE", year : "I", phone : "9080719418"}
     ]
   },
   {
@@ -168,7 +168,7 @@ export const day1Events: EventData[] = [
       { name: "Dhanush M", department: "AI&DS", year: "IV", phone: "7395951642" },
       { name: "vasanthan M", department: "ECE", year: "III", phone: "6379236504" },
       { name: "Dharshan S", department: "IT", year: "II", phone: "9080700592" },
-      { name: "Kousalya", department: "MBA", year: "I", phone: "91042041684" }
+      { name: "Kousalya  B", department: "MBA", year: "I", phone: "9042041684" }
     ]
   },
   {
@@ -192,7 +192,7 @@ export const day1Events: EventData[] = [
     fee: "₹885 (inclusive 18% GST)",
     coordinators: [
       { name: "Yogasree S", department: "IT", year: "IV Year", phone: "8778668919" },
-      { name: "Balla Swaminathan M", department: "Chemical", year: "III Year", phone: "6380335438" },
+      { name: "Bala Saminathan M", department: "AI&DS", year: "III Year", phone: "6380335438" },
       { name: "Srilekha S", department: "AI&DS", year: "II Year", phone: "9345301594" },
       { name: "Anish Adhithyan K B", department: "ECE", year: "I Year", phone: "6374277356" }
     ]
@@ -217,10 +217,10 @@ export const day1Events: EventData[] = [
     ],
     fee: "₹885 (inclusive 18% GST)",
     coordinators: [
-      { name: "Thanigai Raj", department: "ECE", year: "IV Year", phone: "7604973726" },
-      { name: "Lakshanika", department: "CSE", year: "III Year", phone: "7305872675" },
-      { name: "Surendhar", department: "AI&DS", year: "II Year", phone: "7305167354" },
-      { name: "Navatheep sing", department: "CSE-AIML", year: "I Year", phone: "6381687767" }
+      { name: "Thanigai Raj S", department: "ECE", year: "IV Year", phone: "7604973726" },
+      { name: "Lakshanika T G K ", department: "CSE", year: "III Year", phone: "7305872675" },
+      { name: "Surendhar M", department: "AI&DS", year: "II Year", phone: "7305167354" },
+      { name: "Navatheep sing K N", department: "CSE-AIML", year: "I Year", phone: "6381687767" }
     ]
   }
 ];
