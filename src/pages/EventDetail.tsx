@@ -7,7 +7,6 @@ import { ScrollAnimation } from "@/components/ui/ScrollAnimation";
 import { eventForms } from "@/data/eventForms";
 import { eventFormMap } from "@/data/eventFormMap";
 import { eventPosters } from "@/data/eventPosters";
-
 import {
   ArrowLeft,
   Trophy,
@@ -16,7 +15,6 @@ import {
   ExternalLink,
   Image as ImageIcon,
 } from "lucide-react";
-import { useState } from "react";
 
 const EventDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -29,8 +27,6 @@ const EventDetail = () => {
   const formLink = id ? eventForms[id] : undefined;
   const formType = id ? eventFormMap[id] : undefined;
   const posterImage = id ? eventPosters[id] : undefined;
-  const [showSoon, setShowSoon] = useState(false);
-
 
   const handleBackClick = () => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -205,60 +201,30 @@ const EventDetail = () => {
                 </ScrollAnimation>
 
                 {/* REGISTER */}
-<ScrollAnimation delay={350}>
-  <Button
-    size="lg"
-    className="w-full py-6 text-lg font-semibold"
-    onClick={() => setShowSoon(true)}
-  >
-    Register Now
-  </Button>
-
-  {showSoon && (
-    <div className="mt-4 flex justify-center">
-      <span className="pop-message">
-        🚀 Registration Opens Soon
-      </span>
-    </div>
-  )}
-</ScrollAnimation>
-
-
+                <ScrollAnimation delay={350}>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full py-6 text-lg font-semibold"
+                    disabled={!formLink}
+                  >
+                    <a
+                      href={formLink || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Register Now
+                      <ExternalLink className="ml-2 h-5 w-5" />
+                    </a>
+                  </Button>
+                </ScrollAnimation>
               </div>
             </div>
           </div>
-             </section>
-    </div>
-
-    {/* 🔽 PASTE CSS HERE */}
-    <style>{`
-      .pop-message {
-        padding: 14px 28px;
-        border-radius: 999px;
-        background: rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(250, 204, 21, 0.6);
-        color: #facc15;
-        font-weight: 700;
-        font-size: 18px;
-        animation: popIn 0.45s ease-out forwards, pulseGlow 2s infinite;
-        box-shadow: 0 0 25px rgba(250, 204, 21, 0.7);
-      }
-
-      @keyframes popIn {
-        0% { opacity: 0; transform: scale(0.8); }
-        60% { opacity: 1; transform: scale(1.08); }
-        100% { transform: scale(1); }
-      }
-
-      @keyframes pulseGlow {
-        0%, 100% { box-shadow: 0 0 15px rgba(250, 204, 21, 0.4); }
-        50% { box-shadow: 0 0 35px rgba(250, 204, 21, 0.9); }
-      }
-    `}</style>
-
-  </Layout>
-);
+        </section>
+      </div>
+    </Layout>
+  );
 };
 
 export default EventDetail;
