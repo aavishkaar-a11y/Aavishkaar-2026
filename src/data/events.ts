@@ -31,8 +31,8 @@ export const day1Events: EventData[] = [
       "Judges' decision is final"
     ],
     prizes: [
-      { position: "1st", amount: "₹3,000" },
-      { position: "2nd", amount: "₹2,000" },
+      { position: "1st", amount: "₹2,500" },
+      { position: "2nd", amount: "₹1,500" },
       { position: "3rd", amount: "₹1,000" }
     ],
     fee: "₹236 (inclusive 18% GST)",
@@ -81,7 +81,7 @@ export const day1Events: EventData[] = [
       "Fastest participant wins"
     ],
     prizes: [
-      { position: "1st", amount: "₹2,000" },
+      { position: "1st", amount: "₹2,500" },
       { position: "2nd", amount: "₹1,500" },
       { position: "3rd", amount: "₹1,000" }
     ],
@@ -185,9 +185,9 @@ export const day1Events: EventData[] = [
       "Submit via mail + pen drive"
     ],
     prizes: [
-      { position: "Cinematic Excellence", amount: "₹7,000" },
-      { position: "Visionary Director", amount: "₹5,000" },
-      { position: "Creative Story", amount: "₹3,000" }
+      { position: "Cinematic Excellence", amount: "₹5,000" },
+      { position: "Visionary Director", amount: "₹3,000" },
+      { position: "Creative Story", amount: "₹2,000" }
     ],
     fee: "₹885 (inclusive 18% GST)",
     coordinators: [
@@ -210,10 +210,10 @@ export const day1Events: EventData[] = [
       "Host decision is final"
     ],
     prizes: [
-      { position: "1st", amount: "₹3,500" },
-      { position: "2nd", amount: "₹2,500" },
+      { position: "1st", amount: "₹5,000" },
+      { position: "2nd", amount: "₹3,000" },
       { position: "3rd", amount: "₹2,000" },
-      { position: "Special price", amount: "₹1,000" }
+     
     ],
     fee: "₹885 (inclusive 18% GST)",
     coordinators: [
@@ -239,8 +239,10 @@ export const day2Events: EventData[] = [
       "Follow safety guidelines"
     ],
     prizes: [
-      { position: "Best Stall", amount: "₹1,500" },
-      { position: "Most Creative", amount: "₹1,000" }
+          { position: "1st", amount: "₹5,000" },
+      { position: "2nd", amount: "₹3,000" },
+      { position: "3rd", amount: "₹2,000" },
+     
     ],
     fee: "₹885 (inclusive 18% GST)",
     coordinators: [
@@ -263,10 +265,10 @@ export const day2Events: EventData[] = [
       "Judges' decision is final"
     ],
     prizes: [
-      { position: "Best Cosplay", amount: "₹2,000" },
-      { position: "Runner-up Cosplay", amount: "₹1,500" },
-      { position: "Best Corporate Walk", amount: "₹2,000" },
-      { position: "Runner-up Corporate", amount: "₹1,500" }
+     { position: "1st", amount: "₹5,000" },
+      { position: "2nd", amount: "₹3,000" },
+      { position: "3rd", amount: "₹2,000" },
+     
     ],
     fee: "₹885 (inclusive 18% GST)",
     coordinators: [
