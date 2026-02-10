@@ -100,7 +100,7 @@ const Day1 = () => {
                     Day 1
                   </h1>
                   <p className="text-secondary uppercase tracking-widest text-sm mb-2">
-                    March 13th, 2026
+                    March 27th, 2026
                   </p>
                   <p className="text-foreground/80 text-lg">
                     Dance • Photography • Gaming • Creativity

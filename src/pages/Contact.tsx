@@ -110,7 +110,7 @@ const Contact = () => {
                     <div>
                       <p className="text-xs text-muted-foreground">Event Dates</p>
                       <p className="font-medium">
-                        March 13th & 14th – 2026
+                        March 27th & 28th – 2026
                       </p>
                     </div>
                   </div>

@@ -76,7 +76,7 @@ const Day2 = () => {
                     Day 2
                   </h1>
                   <p className="text-secondary uppercase tracking-widest text-sm mb-2">
-                    March 14th, 2026
+                    March 28th, 2026
                   </p>
                   <p className="text-foreground/80 text-lg">
                     Creative Stalls • Ramp Walk • Showcase

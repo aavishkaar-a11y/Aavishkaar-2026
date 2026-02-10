@@ -48,7 +48,7 @@ const Concert = () => {
               <ScrollAnimation>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6">
                   <Calendar size={16} />
-                  March 14th, 2026 – Evening
+                  March 28th, 2026 – Evening
                 </div>
               </ScrollAnimation>
 
