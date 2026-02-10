@@ -116,7 +116,7 @@ export default function Prizes() {
           </h1>
 
           <p className="hero-sub text-muted-foreground mb-6">
-            🎭 AAVISHKAAR 2026 • March 13 & 14
+            🎭 AAVISHKAAR 2026 • March 27 & 28
           </p>
 
           <div className="hero-prize inline-block px-10 py-8 rounded-3xl border-2 border-yellow-400 glow">
