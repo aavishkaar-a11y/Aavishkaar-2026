@@ -149,7 +149,7 @@ export function Footer() {
               © 2026 AAVISHKAR – Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College
             </p>
             <p className="text-xs text-muted-foreground/60">
-              March 13th & 14th – 2026
+              March 27th & 28th – 2026
             </p>
           </div>
         </div>
