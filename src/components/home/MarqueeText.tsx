@@ -9,7 +9,7 @@ export function MarqueeText() {
           <span className="text-primary font-bold text-lg px-8">🥈 2nd Prize</span>
           <span className="text-secondary font-bold text-lg px-8">🥉 3rd Prize</span>
           <span className="text-primary font-bold text-lg px-8">💰 TOTAL PRIZE POOL: ₹1.5 LAKH+</span>
-          <span className="text-secondary font-bold text-lg px-8">🎭 AAVISHKAAR 2026 - March 13th & 14th</span>
+          <span className="text-secondary font-bold text-lg px-8">🎭 AAVISHKAAR 2026 - March 27th & 28th</span>
           {/* Duplicate for seamless loop */}
           <span className="text-primary font-bold text-lg px-8">Registration Opens Soon</span>
           <span className="text-primary font-bold text-lg px-8">🏆 OVERALL COLLEGE CHAMPIONSHIP - 3 GRAND PRIZES</span>
@@ -17,7 +17,7 @@ export function MarqueeText() {
           <span className="text-primary font-bold text-lg px-8">🥈 2nd Prize</span>
           <span className="text-secondary font-bold text-lg px-8">🥉 3rd Prize</span>
           <span className="text-primary font-bold text-lg px-8">💰 TOTAL PRIZE POOL: ₹1.5 LAKH+</span>
-          <span className="text-secondary font-bold text-lg px-8">🎭 AAVISHKAAR 2026 - March 13th & 14th</span>
+          <span className="text-secondary font-bold text-lg px-8">🎭 AAVISHKAAR 2026 - March 27th & 28th</span>
         </div>
       </div>
     </div>
