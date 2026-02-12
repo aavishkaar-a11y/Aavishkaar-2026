@@ -87,7 +87,7 @@ export const day1Events: EventData[] = [
     ],
     fee: "₹236 (inclusive 18% GST)",
     coordinators: [
-      { name: "Venanshiya P", department: "ECE", year: "IV Year", phone: "6369453279" },
+      { name: "Nithish K", department: "CSE", year: "III Year", phone: "9500633568" },
       { name: "Krishna K", department: "Civil", year: "III Year", phone: "8124835538" },
       { name: "Deekshita K R", department: "ECE", year: "II Year", phone: "9080566376" },
       { name: "Magishwari M", department: "Biotech", year: "I Year", phone: "9344430810" }
@@ -274,7 +274,7 @@ export const day2Events: EventData[] = [
     coordinators: [
       { name: "Arjun Hari G", department: "AI&DS", year: "IV Year", phone: "7358767625" },
       { name: "Reshmi V", department: "CSE-AIML", year: "III Year", phone: "7904750287" },
-      { name: "Sathvika Shree S", department: "IT", year: "II Year", phone: "7010877900" },
+      { name: "Neha M", department: "CSE", year: "II Year", phone: "7358901292" },
       { name: "Bhavatharini A", department: "ECE", year: "I Year", phone: "9319545530" }
     ]
   }
