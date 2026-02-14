@@ -97,7 +97,7 @@ const Contact = () => {
                         Engineering College
                       </p>
                       <p className="text-muted-foreground text-sm mt-1">
-                        Avadi, Chennai – 600055
+                        Avadi, Chennai – 600062
                       </p>
                     </div>
                   </div>

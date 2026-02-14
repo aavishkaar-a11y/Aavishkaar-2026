@@ -33,7 +33,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <h3 className="font-samarkan text-2xl neon-yellow mb-4">aavishkaar-2026</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              A landmark cultural event celebrating talent, creativity, innovation, 
+              A 6ᵗʰ Mega cultural event celebrating talent, creativity, innovation, 
               and culture, bringing students together on one grand stage.
             </p>
             <p className="text-primary font-semibold italic">
@@ -124,7 +124,7 @@ export function Footer() {
               <address className="not-italic leading-relaxed">
                 60, Avadi – Vel Tech Road,<br />
                 Vel Nagar, Avadi,<br />
-                Chennai, Tamil Nadu – 600055
+                Chennai, Tamil Nadu – 600062
               </address>
             </div>
             <div className="rounded-lg overflow-hidden border border-border/50 neon-border-blue">

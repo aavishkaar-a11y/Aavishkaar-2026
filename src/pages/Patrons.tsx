@@ -7,6 +7,10 @@ import chairpersonImg from "@/assets/Chairperson.jpg";
 import principalImg from "@/assets/principal.jpg";
 import deanImg from "@/assets/dean-academices.jpg";
 import teamImg from "@/assets/group1.jpeg";
+import { useRef } from "react";
+import { useAutoScroll } from "@/hooks/useAutoScroll";
+import { RollerCoaster } from "lucide-react";
+
 
 const patrons = [
   {
@@ -45,13 +49,23 @@ const organizingTeam = {
     { name: "Dr. M. Gopinath", role: "Associate Dean (IIC)", phone: "9994041130" },
   ],
   students: [
-    { name: "Mr. Charan. B", department: "AIDS, IV Year", phone: "8122334200" },
-    { name: "Ms. Venanshiya. P", department: "ECE, IV Year", phone: "6369453279" },
+    { name: "Mr. Charan. B", department: "AIDS, IV Year", phone: "8122334200", Role: "Secretory" },
+    { name: "Ms. Venanshiya. P", department: "ECE, IV Year", phone: "6369453279", Role: "Joint Secretory"},
+    
   ],
+  ITsupport:[
+    { name: "Ms. Sathvika Shree S", department: "IT, II Year", phone: "7010877900"},
+    { name: "Mr. Aditiya p s", department: "CSE, II Year", phone: "9363972364"}
+  ]
 };
 
 const Patrons = () => {
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+  useAutoScroll();
+
   return (
+
     <Layout>
       {/* 🎥 BACKGROUND VIDEO */}
       <div className="relative min-h-screen">
@@ -88,8 +102,13 @@ const Patrons = () => {
         {/* ================= PATRONS LIST ================= */}
         <section className="py-10 sm:py-16 relative z-10">
           <div className="container mx-auto px-4">
-            <div className="space-y-10 sm:space-y-14 max-w-6xl mx-auto">
-              {patrons.map((patron, index) => (
+           <div
+  ref={scrollRef}
+  className="space-y-10 sm:space-y-14 max-w-6xl mx-auto overflow-hidden"
+>
+  {patrons.map((patron, index) => (
+
+
                 <ScrollAnimation key={patron.name} delay={index * 100}>
                   <div className="glass-card rounded-2xl p-5 sm:p-8 flex flex-col md:flex-row items-center gap-6 sm:gap-8">
                     {/* IMAGE */}
@@ -157,7 +176,7 @@ const Patrons = () => {
             {/* STUDENT LEADS */}
             <ScrollAnimation delay={300}>
               <h3 className="text-center text-secondary font-semibold mb-6">
-                Student Leads
+                Club Members
               </h3>
             </ScrollAnimation>
 
@@ -166,6 +185,9 @@ const Patrons = () => {
                 <ScrollAnimation key={student.name} delay={350 + index * 50}>
                   <div className="glass-card rounded-xl p-5 text-center">
                     <p className="font-semibold">{student.name}</p>
+                      <p className="neon-yellow text-xs font-medium">
+          {student.Role}
+        </p>
                     <p className="text-muted-foreground text-sm">
                       {student.department}
                     </p>
@@ -179,6 +201,32 @@ const Patrons = () => {
                 </ScrollAnimation>
               ))}
             </div>
+            {/* IT SUPPORT */}
+<ScrollAnimation delay={400}>
+  <h3 className="text-center text-secondary font-semibold mt-12 mb-6">
+    IT SUPPORT TEAM
+  </h3>
+</ScrollAnimation>
+
+<div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+  {organizingTeam.ITsupport.map((member, index) => (
+    <ScrollAnimation key={member.name} delay={450 + index * 50}>
+      <div className="glass-card rounded-xl p-5 text-center">
+        <p className="font-semibold text-lg">{member.name}</p>
+         <p className="text-muted-foreground text-sm">
+                      {member.department}
+                    </p>
+        <a
+          href={`tel:${member.phone}`}
+          className="text-secondary text-sm mt-1 inline-block hover:underline"
+        >
+          {member.phone}
+        </a>
+      </div>
+    </ScrollAnimation>
+  ))}
+</div>
+
           </div>
         </section>
       </div>

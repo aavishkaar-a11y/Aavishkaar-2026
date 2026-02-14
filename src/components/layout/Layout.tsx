@@ -13,10 +13,21 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col bg-transparent cursor-none">
+      
+      {/* Custom Cursor */}
       <CustomCursor />
+
+      {/* Navbar */}
       <Navbar />
-      <main className="flex-1 relative z-[2]">{children}</main>
+
+      {/* Main Content */}
+      <main className="flex-1 relative z-[2]">
+        {children}
+      </main>
+
+      {/* Footer */}
       <Footer />
+
     </div>
   );
 }

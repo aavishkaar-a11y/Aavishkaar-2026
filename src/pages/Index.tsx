@@ -6,9 +6,11 @@ import { ThemeVideo } from "@/components/home/ThemeVideo";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { ParticleBackground } from "@/components/ui/ParticleBackground";
 import { MarqueeText } from "@/components/home/MarqueeText";
-
+import { useAutoScroll } from "@/hooks/useAutoScroll";
 
 const Index = () => {
+  useAutoScroll(); // smooth slow readable scroll
+
   return (
     <Layout>
       <ParticleBackground />
@@ -19,7 +21,6 @@ const Index = () => {
       <EventHighlights />
       <AboutPreview />
     </Layout>
-
   );
 };
 

@@ -61,17 +61,20 @@ export function Navbar() {
 
   {/* College Name with Logo - Desktop */}
             <div className="hidden lg:flex items-center gap-3">
-              <div className="text-right">
-                <p className="text-xs text-muted-foreground leading-tight">
-                  Vel Tech High Tech
-                </p>
-                <p className="text-xs text-muted-foreground leading-tight">
-                  Dr. Rangarajan Dr. Sakunthala
-                </p>
-                <p className="text-xs text-primary font-medium">
-                  Engineering College
-                </p>
-              </div>
+  <div className="text-right leading-tight space-y-0.5">
+    <p className="text-xs text-muted-foreground">
+      Vel Tech High Tech
+    </p>
+    <p className="text-xs text-muted-foreground">
+      Dr. Rangarajan Dr. Sakunthala
+    </p>
+    <p className="text-xs text-primary font-semibold">
+      Engineering College
+    </p>
+    <p className="text-[10px] text-yellow-400 font-medium tracking-wide">
+      An Autonomous Institution
+    </p>
+  </div>
               <img 
                 src={logoCircular} 
                 alt="College Logo" 
@@ -121,20 +124,22 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={cn(
-          "fixed inset-0 z-30 lg:hidden transition-all duration-300",
-          isMobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        )}
-      >
+  className={cn(
+    "fixed top-16 left-0 right-0 bottom-0 z-30 lg:hidden transition-all duration-300",
+    isMobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
+  )}
+>
+
         <div
           className="absolute inset-0 bg-background/95 backdrop-blur-lg"
           onClick={() => setIsMobileOpen(false)}
         />
-        <div className="relative flex flex-col items-center justify-center h-full gap-4 p-8">
+        <div className="relative flex flex-col items-center justify-center h-full gap-4 p-10">
           <p className="text-xs text-muted-foreground text-center mb-4">
-            Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College
+            Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College 
+             An Autonomous Institution
           </p>
-          
+           
           <div className="flex flex-col items-center gap-2 mb-6">
             {topNavItems.map((item) => (
               <Link

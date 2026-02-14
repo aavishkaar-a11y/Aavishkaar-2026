@@ -43,7 +43,7 @@ export function HeroSection() {
               March 27th & 28th – 2026
             </span>
             <Sparkles className="text-primary" size={24} />
-          </div>
+                      </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-in-right" style={{ animationDelay: "0.4s" }}>

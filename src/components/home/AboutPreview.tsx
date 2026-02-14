@@ -25,7 +25,7 @@ export function AboutPreview() {
             </h2>
 
             <p className="text-foreground/80 text-base sm:text-lg leading-relaxed mb-6">
-              AAVISHKAAR-2026 is a landmark cultural fest organized by{" "}
+              AAVISHKAAR-2026 is a 6ᵗʰ Mega cultural fest organized by{" "}
               <span className="text-primary font-medium">
                 Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College
               </span>

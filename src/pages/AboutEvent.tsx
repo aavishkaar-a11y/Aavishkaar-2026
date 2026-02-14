@@ -50,7 +50,7 @@ const AboutEvent = () => {
                     <span className="text-primary font-semibold">
                       AAVISHKAAR-2026
                     </span>{" "}
-                    is a landmark cultural event organized by{" "}
+                    is a 6ᵗʰ Mega cultural event organized by{" "}
                     <span className="text-secondary font-medium">
                       Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College
                     </span>

@@ -156,6 +156,105 @@ export default function Gallery() {
           </ScrollAnimation>
         </section>
 
+       {/* ================= PRO SHOW SLIDESHOW ================= */}
+<section className="py-20 relative z-10 overflow-hidden">
+
+  {/* TITLE */}
+<div className="text-center mb-14 relative z-20">
+  <ScrollAnimation>
+  <h2 className="font-samarkan text-3xl sm:text-4xl neon-yellow mb-2">
+    PRO SHOW MOMENTS
+  </h2>
+</ScrollAnimation>
+<ScrollAnimation>
+  <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
+    Spotlight performances that lit up AAVISHKAAR ✨
+  </p>
+</ScrollAnimation>
+  {/* glow divider */}
+  <div className="mt-6 h-[2px] w-24 mx-auto bg-yellow-400/60 shadow-[0_0_12px_#facc15]" />
+</div>
+
+  {/* ================= CINEMATIC SLIDESHOW ================= */}
+        
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="relative h-[260px] sm:h-[380px] flex items-center justify-center">
+              {galleryItems.map((img, i) => {
+                const offset =
+                  (i - current + galleryItems.length) % galleryItems.length;
+
+                let scale = "scale-75 opacity-0";
+                let translate = "translate-x-0 z-0";
+
+                if (offset === 0) {
+                  scale = "scale-100 opacity-100";
+                  translate = "translate-x-0 z-20";
+                } else if (offset === 1) {
+                  scale = "scale-90 opacity-60";
+                  translate = "translate-x-[55%] z-10";
+                } else if (offset === galleryItems.length - 1) {
+                  scale = "scale-90 opacity-60";
+                  translate = "-translate-x-[55%] z-10";
+                }
+
+                return (
+                  <img
+                    key={i}
+                    src={img}
+                    onClick={() => setCurrent(i)}
+                    className={`
+                      absolute rounded-xl shadow-2xl cursor-pointer
+                      transition-all duration-700 ease-[cubic-bezier(.4,0,.2,1)]
+                      ${scale} ${translate}
+                      w-[72%] sm:w-[56%] h-full object-cover
+                    `}
+                  />
+                );
+              })}
+
+              {/* LEFT */}
+              <button
+                onClick={() =>
+                  setCurrent(
+                    (current - 1 + galleryItems.length) %
+                      galleryItems.length
+                  )
+                }
+                className="absolute left-3 sm:left-8 z-30 glass-card p-3 rounded-full"
+              >
+                <ChevronLeft size={22} />
+              </button>
+
+              {/* RIGHT */}
+              <button
+                onClick={() =>
+                  setCurrent((current + 1) % galleryItems.length)
+                }
+                className="absolute right-3 sm:right-8 z-30 glass-card p-3 rounded-full"
+              >
+                <ChevronRight size={22} />
+              </button>
+            </div>
+
+            {/* THUMBNAILS */}
+            <div className="flex gap-2 mt-6 overflow-x-auto scrollbar-hide justify-center">
+              {galleryItems.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  onClick={() => setCurrent(i)}
+                  className={`h-14 w-20 sm:h-16 sm:w-24 object-cover rounded-md cursor-pointer transition ${
+                    i === current
+                      ? "ring-2 ring-primary scale-105"
+                      : "opacity-60 hover:opacity-100"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+
       {/* ================= TIMELINE ================= */}
 <section id="timeline-section" className="relative py-24 px-4 z-10 overflow-hidden">
  <ScrollAnimation>
@@ -312,105 +411,6 @@ export default function Gallery() {
     </div>
   </div>
 )}
-
-
-       {/* ================= PRO SHOW SLIDESHOW ================= */}
-<section className="py-20 relative z-10 overflow-hidden">
-
-  {/* TITLE */}
-<div className="text-center mb-14 relative z-20">
-  <ScrollAnimation>
-  <h2 className="font-samarkan text-3xl sm:text-4xl neon-yellow mb-2">
-    PRO SHOW MOMENTS
-  </h2>
-</ScrollAnimation>
-<ScrollAnimation>
-  <p className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto">
-    Spotlight performances that lit up AAVISHKAAR ✨
-  </p>
-</ScrollAnimation>
-  {/* glow divider */}
-  <div className="mt-6 h-[2px] w-24 mx-auto bg-yellow-400/60 shadow-[0_0_12px_#facc15]" />
-</div>
-
-  {/* ================= CINEMATIC SLIDESHOW ================= */}
-        
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="relative h-[260px] sm:h-[380px] flex items-center justify-center">
-              {galleryItems.map((img, i) => {
-                const offset =
-                  (i - current + galleryItems.length) % galleryItems.length;
-
-                let scale = "scale-75 opacity-0";
-                let translate = "translate-x-0 z-0";
-
-                if (offset === 0) {
-                  scale = "scale-100 opacity-100";
-                  translate = "translate-x-0 z-20";
-                } else if (offset === 1) {
-                  scale = "scale-90 opacity-60";
-                  translate = "translate-x-[55%] z-10";
-                } else if (offset === galleryItems.length - 1) {
-                  scale = "scale-90 opacity-60";
-                  translate = "-translate-x-[55%] z-10";
-                }
-
-                return (
-                  <img
-                    key={i}
-                    src={img}
-                    onClick={() => setCurrent(i)}
-                    className={`
-                      absolute rounded-xl shadow-2xl cursor-pointer
-                      transition-all duration-700 ease-[cubic-bezier(.4,0,.2,1)]
-                      ${scale} ${translate}
-                      w-[72%] sm:w-[56%] h-full object-cover
-                    `}
-                  />
-                );
-              })}
-
-              {/* LEFT */}
-              <button
-                onClick={() =>
-                  setCurrent(
-                    (current - 1 + galleryItems.length) %
-                      galleryItems.length
-                  )
-                }
-                className="absolute left-3 sm:left-8 z-30 glass-card p-3 rounded-full"
-              >
-                <ChevronLeft size={22} />
-              </button>
-
-              {/* RIGHT */}
-              <button
-                onClick={() =>
-                  setCurrent((current + 1) % galleryItems.length)
-                }
-                className="absolute right-3 sm:right-8 z-30 glass-card p-3 rounded-full"
-              >
-                <ChevronRight size={22} />
-              </button>
-            </div>
-
-            {/* THUMBNAILS */}
-            <div className="flex gap-2 mt-6 overflow-x-auto scrollbar-hide justify-center">
-              {galleryItems.map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  onClick={() => setCurrent(i)}
-                  className={`h-14 w-20 sm:h-16 sm:w-24 object-cover rounded-md cursor-pointer transition ${
-                    i === current
-                      ? "ring-2 ring-primary scale-105"
-                      : "opacity-60 hover:opacity-100"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
 
 
 
