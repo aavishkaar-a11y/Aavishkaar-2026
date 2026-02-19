@@ -26,14 +26,7 @@ const eventImages: Record<string, string> = {
   "ramp-walk": rampWalkImg,
 };
 
-/* 👨‍🏫 FACULTY COORDINATOR */
-const facultyCoordinators = [
-  {
-    name: "Dr. M. Gopinath",
-    role: "Dean - Cultural Club's and Activities (CCA)",
-    phone: "9994041130",
-  },
-];
+
 
 const Day2 = () => {
   const soloEvents = day2Events.filter(e => e.category === "solo");
@@ -65,76 +58,30 @@ const Day2 = () => {
         <div className="fixed inset-0 bg-black/65 -z-10" />
 
         {/* ================= PAGE CONTENT ================= */}
-        <div className="relative z-10 pt-28">
+        <div className="relative z-10 pt-20">
 
           {/* HEADER TEXT */}
           <section className="pb-20">
             <div className="container mx-auto px-4">
               <ScrollAnimation>
                 <div className="text-center max-w-3xl mx-auto">
-                  <h1 className="font-samarkan text-5xl md:text-7xl neon-blue mb-6">
-                    Day 2
+                  <h1 className="font-samarkan text-7xl md:text-7xl neon-yellow mb-6">
+                    Day 2 Event
                   </h1>
-                  <p className="text-secondary uppercase tracking-widest text-sm mb-2">
-                    March 28th, 2026
-                  </p>
+                  
                   <p className="text-foreground/80 text-lg">
-                    Creative Stalls • Ramp Walk • Showcase
+                    SALES • STYLES • SHOWCASE
+                  </p>
+                   <p className="text-secondary uppercase tracking-widest text-xl mb-2 pt-6">
+                    March 28ᵗʰ, 2026
                   </p>
                 </div>
               </ScrollAnimation>
             </div>
           </section>
-
-          {/* FACULTY COORDINATOR */}
-          <section className="py-10">
-            <div className="container mx-auto px-4">
-              {facultyCoordinators.map(c => (
-                <div
-                  key={c.name}
-                  className="glass-card max-w-xl mx-auto p-6 text-center neon-border-blue"
-                >
-                  <p className="text-primary font-semibold">Faculty Coordinator</p>
-                  <p className="text-lg font-medium">{c.name}</p>
-                  <p className="text-muted-foreground">{c.role}</p>
-
-                  <a
-                    href={`tel:${c.phone}`}
-                    className="flex justify-center items-center gap-2 mt-3 text-secondary hover:underline"
-                  >
-                    <Phone size={16} />
-                    {c.phone}
-                  </a>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* SOLO EVENTS */}
-          <section className="py-12">
-            <div className="container mx-auto px-4">
-             
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {soloEvents.map((e, i) => (
-                  <ScrollAnimation key={e.id} delay={i * 100}>
-                    <EventCard
-                      id={e.id}
-                      title={e.title}
-                      category="Solo"
-                      icon={eventIcons[e.id]}
-                      image={eventImages[e.id]}
-                      description={e.description}
-                      fee={e.fee}
-                      prizes={e.prizes.map(p => `₹${p.amount}`)}
-                    />
-                  </ScrollAnimation>
-                ))}
-              </div>
-            </div>
-          </section>
-
+         
           {/* GROUP EVENTS */}
-          <section className="py-12 pb-24">
+          <section className="py-12 pb-12">
             <div className="container mx-auto px-4">
               <h2 className="text-2xl font-semibold mb-8 flex gap-2">
                 <Users /> Group Events

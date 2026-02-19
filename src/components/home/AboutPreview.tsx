@@ -6,10 +6,7 @@ export function AboutPreview() {
   return (
     <section className="py-16 sm:py-20 relative overflow-hidden">
       {/* Background fade */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-background to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-background to-transparent" />
-      </div>
+     
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-10 sm:gap-14 items-center">
@@ -66,7 +63,7 @@ export function AboutPreview() {
                   playsInline
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/45" />
+                <div className="absolute inset-0 bg-black/50" />
               </div>
 
               {/* ===== FLOATING BADGES ===== */}

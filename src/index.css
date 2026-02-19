@@ -93,9 +93,17 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Poppins', sans-serif;
+  @apply bg-background text-foreground antialiased;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hide default cursor only on desktop */
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
   }
+}
+
 
   html {
     scroll-behavior: smooth;
@@ -391,4 +399,249 @@ html, body {
 
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Breathing Effect */
+@keyframes breathe {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+.animate-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+/* Strong Center Glow Pulse */
+@keyframes centerGlow {
+  0% {
+    box-shadow: 0 0 40px rgba(250, 204, 21, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 100px rgba(250, 204, 21, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(250, 204, 21, 0.4);
+  }
+}
+
+.animate-center-glow {
+  animation: centerGlow 3s ease-in-out infinite;
+}
+/* ============================= */
+/* 🎬 Circular 3D Carousel */
+/* ============================= */
+
+.carousel-container {
+  width: 100%;
+  height: 420px;
+  perspective: 2000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  transform-style: preserve-3d;
+  animation: rotateCarousel 25s linear infinite;
+}
+
+/* Responsive Depth */
+@media (max-width: 768px) {
+  .carousel {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+.carousel-item {
+  position: absolute;
+  width: 220px;
+  height: 300px;
+  left: 50%;
+  top: 50%;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  margin: -150px 0 0 -110px;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    width: 160px;
+    height: 220px;
+    margin: -110px 0 0 -80px;
+  }
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #050510, #0a0a1f);
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(250, 204, 21, 0.7);
+  border: 1px solid rgba(250, 204, 21, 0.6);
+}
+
+/* Auto Rotation */
+@keyframes rotateCarousel {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Floating */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Breathing */
+@keyframes breathe {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+.animate-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marqueeScroll 25s linear infinite;
+}
+video {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+}
+/* Smooth right-to-left infinite movement */
+@keyframes marquee3d {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-3d {
+  animation: marquee3d 22s linear infinite;
+}
+
+/* Floating 3D Effect */
+@keyframes float3d {
+  0% { transform: translateY(0px) rotateY(0deg); }
+  50% { transform: translateY(-8px) rotateY(4deg); }
+  100% { transform: translateY(0px) rotateY(0deg); }
+}
+
+.floating-card {
+  animation: float3d 5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* Faster on mobile */
+@media (max-width: 768px) {
+  .animate-marquee-3d {
+    animation: marquee3d 16s linear infinite;
+  }
+}
+/* ===== Marquee ===== */
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollLeft 18s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== 3D Card ===== */
+
+.card-3d {
+  min-width: 240px;
+  padding: 20px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #0a0a1f, #050510);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  text-align: center;
+  transition: all 0.5s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+.card-3d:hover {
+  transform: translateY(-8px) rotateY(6deg) scale(1.05);
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.6);
+}
+
+/* Floating Effect */
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Mobile Responsive Speed */
+@media (max-width: 768px) {
+  .marquee-track {
+    animation: scrollLeft 12s linear infinite;
+  }
+
+  .card-3d {
+    min-width: 200px;
+  }
 }

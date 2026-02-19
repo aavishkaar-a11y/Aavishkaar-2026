@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
 const steps = [
-  { title: "Participate", description: "Choose your event" },
-  { title: "Register", description: "Fill the form" },
+  { title: "Register", description: "Choose your event" },
+  { title: "Participate", description: "Fill the form" },
   { title: "Get Selected", description: "Qualify for finals" },
   { title: "Win Amazing Prizes", description: "Claim your glory" },
 ];

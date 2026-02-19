@@ -254,7 +254,7 @@ export const day2Events: EventData[] = [
   },
   {
     id: "ramp-walk",
-    title: "CO-Rporate Walk",
+    title: "Corporate Walk",
     category: "group",
     description: "Walk the runway with confidence! Showcase your style in Cosplay or Corporate Walk categories.",
     rules: [

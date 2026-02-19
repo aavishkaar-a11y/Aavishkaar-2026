@@ -23,16 +23,17 @@ const AboutEvent = () => {
           <div className="container mx-auto px-4">
             <ScrollAnimation>
               <div className="text-center max-w-3xl mx-auto">
-                <p className="text-secondary uppercase tracking-widest text-xs sm:text-sm mb-2">
-                  Welcome to
-                </p>
+                
 
-                <h1 className="font-samarkan text-3xl sm:text-5xl md:text-6xl neon-yellow mb-4 sm:mb-6">
-                  aavishkaar-2026
+                <h1 className="font-samarkan text-6xl sm:text-8xl md:text-8xl neon-yellow mb-4 sm:mb-6">
+                  aavishkaar 2026
                 </h1>
 
                 <p className="text-sm sm:text-lg text-foreground/80 italic">
                   "Unleashed Vibes; Unmatched Energy"
+                </p>
+                <p className="text-secondary uppercase tracking-widest text-xl sm:text-xl  mt-5">
+                  March 27ᵗʰ & 28ᵗʰ – 2026 
                 </p>
               </div>
             </ScrollAnimation>

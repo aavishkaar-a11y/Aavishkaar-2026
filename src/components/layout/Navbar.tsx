@@ -36,16 +36,17 @@ export function Navbar() {
   return (
     <>
       {/* Top Navbar - Static */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
+      <nav className="fixed top-0 left-0 right-0 z-40 bg-blue-950  backdrop-blur-md border-spacing-3 border-border/100">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo Text Only */}
             <Link to="/" className="flex items-center group">
-              <span className="font-samarkan text-2xl neon-yellow tracking-wider">
-                aavishkaar-2026
+              <span className="font-samarkan text-4xl neon-yellow tracking-wider">
+                aavishkaar 2026
               </span>
+              
             </Link>
-
+            
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-1">
               {topNavItems.map((item) => (
@@ -60,26 +61,28 @@ export function Navbar() {
             </div>
 
   {/* College Name with Logo - Desktop */}
-            <div className="hidden lg:flex items-center gap-3">
-  <div className="text-right leading-tight space-y-0.5">
-    <p className="text-xs text-muted-foreground">
-      Vel Tech High Tech
-    </p>
-    <p className="text-xs text-muted-foreground">
-      Dr. Rangarajan Dr. Sakunthala
-    </p>
-    <p className="text-xs text-primary font-semibold">
-      Engineering College
-    </p>
-    <p className="text-[10px] text-yellow-400 font-medium tracking-wide">
-      An Autonomous Institution
-    </p>
-  </div>
-              <img 
+  
+            <div className="hidden lg:flex items-center gap-3 
+                bg-white/95 backdrop-blur-sm
+                px-4 py-2
+                shadow-md h-15">
+               <img 
                 src={logoCircular} 
                 alt="College Logo" 
-                className="w-10 h-10 rounded-full border-2 border-primary/50 shadow-lg shadow-primary/20"
+                className="w-12 h-12 rounded-full border-2 border-primary/50 shadow-lg shadow-primary/20"
               />
+  <div className="text-center fleading-tight " style={{ fontFamily: "Times New Roman, serif" }}>
+  <p className="text-3xl text-blue-950 font-bold">
+    Vel Tech High Tech
+  </p>
+  <p className="text-[11px] font-bold text-blue-950">
+    Dr. Rangarajan Dr. Sakunthala Engineering College
+  </p>
+  <p className="text-[11px] text-orange-500 font-medium tracking-wide">
+    An Autonomous Institution
+  </p>
+</div>
+
             </div>
 
             {/* Mobile Menu Button */}
@@ -92,35 +95,37 @@ export function Navbar() {
           </div>
         </div>
       </nav>
+{/* Event Navbar - Sticky Yellow Background */}
+<nav
+  className={cn(
+    "fixed left-0 right-0 z-40 transition-all duration-500 border-b border-yellow-500/40",
+    isScrolled
+      ? "top-16 bg-yellow-400/80 backdrop-blur-md"
+      : "top-16 bg-yellow-400"
+  )}
+>
+  <div className="container mx-auto px-4">
+    <div className="hidden lg:flex items-center justify-center gap-6 h-12">
+      {eventNavItems.map((item) => (
+        <Link
+          key={item.path}
+          to={item.path}
+          className={cn(
+            "px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300",
+            isActive(item.path)
+              ? "bg-black text-yellow-400"
+              : "text-black hover:bg-black/10"
+          )}
+        >
+          {item.label}
+        </Link>
+      ))}
+    </div>
+  </div>
+</nav>
 
-      {/* Event Navbar - Sticky */}
-      <nav
-        className={cn(
-          "fixed left-0 right-0 z-40 transition-all duration-300 border-b border-primary/20",
-          isScrolled
-            ? "top-16 bg-background/95 backdrop-blur-lg shadow-lg shadow-primary/5"
-            : "top-16 bg-muted/50 backdrop-blur-sm"
-        )}
-      >
-        <div className="container mx-auto px-4">
-          <div className="hidden lg:flex items-center justify-center gap-2 h-12">
-            {eventNavItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={cn(
-                  "px-6 py-2 text-sm font-medium rounded-full transition-all duration-300",
-                  isActive(item.path)
-                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30"
-                    : "text-muted-foreground hover:text-primary hover:bg-primary/10"
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+
+
 
       {/* Mobile Menu */}
       <div
@@ -135,11 +140,7 @@ export function Navbar() {
           onClick={() => setIsMobileOpen(false)}
         />
         <div className="relative flex flex-col items-center justify-center h-full gap-4 p-10">
-          <p className="text-xs text-muted-foreground text-center mb-4">
-            Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College 
-             An Autonomous Institution
-          </p>
-           
+          
           <div className="flex flex-col items-center gap-2 mb-6">
             {topNavItems.map((item) => (
               <Link

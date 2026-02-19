@@ -78,14 +78,18 @@ export function Footer() {
               <a
                 href="tel:+919363972364"
                 className="flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors text-sm"
-              >
+              >              <h3 className="text-white text-sm font-semibold leading-tight mb-1">
+      Adityan P S
+    </h3>
                 <Phone size={16} />
-                +91 9363972364
+                +91 9363972364 
               </a>
               <a
                 href="tel:+917010877900"
                 className="flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors text-sm"
-              >
+              >              <h3 className="text-white text-sm font-semibold leading-tight mb-1">
+      Sathvika Shree S
+    </h3>
                 <Phone size={16} />
                 +91 7010877900
               </a>
@@ -109,7 +113,49 @@ export function Footer() {
   >
     <Youtube size={20} />
   </a>
+  
 </div>
+{/* Faculty Coordinator */}
+<div className="flex justify-center mt-3">
+
+  <div
+    className="
+      w-full max-w-[260px]
+      rounded-md
+      border border-cyan-400/25
+      backdrop-blur-sm
+      px-3 py-3
+      text-center
+      shadow-[0_0_15px_rgba(34,211,238,0.35)]
+    "
+  >
+    {/* Heading */}
+    <p className="text-yellow-400 font-semibold text-[11px] mb-1">
+      Faculty Coordinator
+    </p>
+
+    {/* Name */}
+    <h3 className="text-white text-sm font-semibold leading-tight mb-1">
+      Dr. M. Gopinath
+    </h3>
+
+    {/* Designation */}
+    <p className="text-gray-300 text-[10px] leading-tight mb-2">
+      Dean – Clubs & Culturals Activities (CCA)
+    </p>
+
+    {/* Phone */}
+    <a
+      href="tel:+919994041130"
+      className="flex justify-center items-center gap-1 text-cyan-400 text-[11px] font-medium hover:text-cyan-300 transition"
+    >
+      <Phone size={12} />
+      9994041130
+    </a>
+  </div>
+
+</div>
+
             </div>
           </div>
 

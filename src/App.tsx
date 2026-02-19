@@ -15,6 +15,8 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Prizes from "./pages/Prizes";
+import Team from "@/pages/team";
+
 
 import BackgroundMusic from "@/components/ui/BackgroundMusic";
 import { IntroVideo } from "@/components/ui/IntroVideo";
@@ -39,6 +41,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about-event" element={<AboutEvent />} />
           <Route path="/patrons" element={<Patrons />} />
+         
           <Route path="/day-1" element={<Day1 />} />
           <Route path="/day-2" element={<Day2 />} />
           <Route path="/concert" element={<Concert />} />

@@ -27,8 +27,7 @@ export function HeroSection() {
         <div className="text-center max-w-5xl mx-auto">
           {/* Main Title */}
           <h1 className="font-samarkan text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-6 animate-slide-in-right" style={{ animationDelay: "0.1s" }}>
-            <span className="neon-yellow flicker">aavishkaar</span>
-            <span className="block text-3xl sm:text-4xl md:text-5xl mt-2 neon-blue">-2026</span>
+            <span className="neon-yellow flicker">aavishkaar 2026</span>
           </h1>
 
           {/* Tagline */}
@@ -40,7 +39,7 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full neon-border-yellow mb-10 animate-slide-in-right animate-pulse-glow" style={{ animationDelay: "0.3s" }}>
             <Sparkles className="text-primary" size={24} />
             <span className="text-lg md:text-xl font-semibold text-primary">
-              March 27th & 28th – 2026
+              March 27ᵗʰ & 28ᵗʰ – 2026
             </span>
             <Sparkles className="text-primary" size={24} />
                       </div>

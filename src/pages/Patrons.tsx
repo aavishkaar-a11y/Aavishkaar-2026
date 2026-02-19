@@ -5,7 +5,6 @@ import founderImg from "@/assets/founder.png";
 import cofounderImg from "@/assets/cofounder.png";
 import chairpersonImg from "@/assets/Chairperson.jpg";
 import principalImg from "@/assets/principal.jpg";
-import deanImg from "@/assets/dean-academices.jpg";
 import teamImg from "@/assets/group1.jpeg";
 import { useRef } from "react";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
@@ -33,7 +32,8 @@ const patrons = [
     description:
       "Ensures smooth institutional functioning and student growth. Her administrative excellence and dedication to student welfare have been key to the success of major events like AAVISHKAAR.",
     image: chairpersonImg,
-  },
+  },]
+  const prince =[
   {
     name: "Prof. Dr. E. Kamalanaban",
     title: "Principal",
@@ -46,17 +46,33 @@ const patrons = [
 
 const organizingTeam = {
   faculty: [
-    { name: "Dr. M. Gopinath", role: "Associate Dean (IIC)", phone: "9994041130" },
+    { name: "Dr. V. R. Ravi", role: "Dean - Academics"},
+    { name: "Dr. M. Gopinath", role: "Dean – Clubs & Culturals Activities (CCA)" }
+  ],
+  convener : [
+      { name : " Dr. R. Suresh ",role : "Dean - SoMC and Dean T&P"},
+      { name : " Dr. P. Vijay Sarathi ",role : "Dean - IQAC"},
+      { name : " Dr. J. B. Veeramalini",role : "Dean - PPT And HEAD-CHEM"},
+      { name : " Dr. A. Saravanaraj ",role : "Dean - R&D"},
+      { name : " Dr M. Suresh Chinnathampy ",role : "Dean - Mentoring And HEAD-ECE "},
+  ],
+  hod : [
+    { name: "Dr. M. Malleshwari",  role : "Head - IT" },
+    { name: "Prof. Pradeep Katta",  role : "Head - S&H" },
+    { name: "Dr. S. Durga Devi", role : "Head - CSE" },
+    { name: "Dr. R. Palani Samy",  role : "Head - MECH" },
+    { name: "Prof. M. Manoj Kumar", role : "Head - CIVIL" },
+    { name: "Dr. S. Manoj Kumar", role : "Head - CSE-AIML" },
+    { name: "Dr. J. Iyyappan",  role : "Head - BioTech" },
+    { name: "Prof. N. Nagarajan", role : "Head - MBA" },
+    { name: "Dr. S. Sathish Kumar",  role : "Head - AI&DS" },
   ],
   students: [
-    { name: "Mr. Charan. B", department: "AIDS, IV Year", phone: "8122334200", Role: "Secretory" },
-    { name: "Ms. Venanshiya. P", department: "ECE, IV Year", phone: "6369453279", Role: "Joint Secretory"},
+    { name: "Mr. Charan. B, ", department: "AIDS, IV Year", phone: "8122334200", Role: "Secretary," },
+    { name: "Ms. Venanshiya. P,", department: "ECE, IV Year", phone: "6369453279", Role: "Joint Secretary,"},
     
-  ],
-  ITsupport:[
-    { name: "Ms. Sathvika Shree S", department: "IT, II Year", phone: "7010877900"},
-    { name: "Mr. Aditiya p s", department: "CSE, II Year", phone: "9363972364"}
   ]
+  
 };
 
 const Patrons = () => {
@@ -88,11 +104,11 @@ const Patrons = () => {
                 <p className="text-secondary uppercase tracking-widest text-xs sm:text-sm mb-2">
                   Our Visionaries
                 </p>
-                <h1 className="font-samarkan text-3xl sm:text-5xl md:text-6xl neon-yellow mb-4">
-                  PATRONS
+                <h1 className="font-samarkan text-3xl sm:text-7xl md:text-8xl neon-yellow mb-4">
+                  CHIEF PATRONS
                 </h1>
                 <p className="text-muted-foreground text-sm sm:text-lg">
-                  The guiding lights behind Vel Tech High Tech Engineering College
+                  The guiding lights behind Vel Tech Group of Colleges
                 </p>
               </div>
             </ScrollAnimation>
@@ -139,96 +155,173 @@ const Patrons = () => {
           </div>
         </section>
 
-        {/* ================= ORGANIZING TEAM ================= */}
-        <section className="py-12 sm:py-16 relative z-10">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <ScrollAnimation>
-              <h2 className="font-samarkan text-2xl sm:text-3xl md:text-4xl neon-blue text-center mb-10">
-                ORGANIZING TEAM
-              </h2>
-            </ScrollAnimation>
+<h1 className="font-samarkan text-center text-4xl sm:text-7xl md:text-8xl neon-yellow mb-4">
+                PATRONS
+                </h1>
+                    {/* ================= PATRONS LIST ================= */}
+        <section className="py-10 sm:py-16 relative z-10">
+          <div className="container mx-auto px-4">
+           <div
+  ref={scrollRef}
+  className="space-y-10 sm:space-y-14 max-w-6xl mx-auto overflow-hidden"
+>
+  {prince.map((prince, index) => (
 
-            {/* FACULTY */}
-            <ScrollAnimation delay={100}>
-              <div className="glass-card rounded-xl p-6 text-center max-w-md mx-auto mb-10">
-                <p className="font-semibold text-lg">{organizingTeam.faculty[0].name}</p>
-                <p className="text-muted-foreground">{organizingTeam.faculty[0].role}</p>
-                <a
-                  href={`tel:${organizingTeam.faculty[0].phone}`}
-                  className="text-secondary mt-2 inline-block hover:underline"
-                >
-                  {organizingTeam.faculty[0].phone}
-                </a>
-              </div>
-            </ScrollAnimation>
 
-            {/* TEAM IMAGE */}
-            <ScrollAnimation delay={200}>
-              <div className="rounded-xl overflow-hidden border-4 border-primary/30 mb-10">
-                <img
-                  src={teamImg}
-                  alt="Organizing Team"
-                  className="w-full h-64 sm:h-80 object-cover"
-                />
-              </div>
-            </ScrollAnimation>
+                <ScrollAnimation key={prince.name} delay={index * 100}>
+                  <div className="glass-card rounded-2xl p-5 sm:p-8 flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+                    {/* IMAGE */}
+                    <div className="w-44 h-60 sm:w-56 sm:h-72 md:w-64 md:h-80 flex-shrink-0 rounded-xl overflow-hidden border-4 border-primary/40">
+                      <img
+                        src={prince.image}
+                        alt={prince.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
 
-            {/* STUDENT LEADS */}
-            <ScrollAnimation delay={300}>
-              <h3 className="text-center text-secondary font-semibold mb-6">
-                Club Members
-              </h3>
-            </ScrollAnimation>
-
-            <div className="grid sm:grid-cols-2 gap-6">
-              {organizingTeam.students.map((student, index) => (
-                <ScrollAnimation key={student.name} delay={350 + index * 50}>
-                  <div className="glass-card rounded-xl p-5 text-center">
-                    <p className="font-semibold">{student.name}</p>
-                      <p className="neon-yellow text-xs font-medium">
-          {student.Role}
-        </p>
-                    <p className="text-muted-foreground text-sm">
-                      {student.department}
-                    </p>
-                    <a
-                      href={`tel:${student.phone}`}
-                      className="text-secondary text-sm mt-1 inline-block hover:underline"
-                    >
-                      {student.phone}
-                    </a>
+                    {/* CONTENT */}
+                    <div className="text-center md:text-left">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">
+                        {prince.name}
+                      </h3>
+                      <p className="font-semibold text-foreground mb-3">
+                        {prince.title}
+                      </p>
+                      <p className="text-muted-foreground text-sm sm:text-base leading-relaxed max-w-2xl">
+                        {prince.description}
+                      </p>
+                    </div>
                   </div>
                 </ScrollAnimation>
               ))}
             </div>
-            {/* IT SUPPORT */}
-<ScrollAnimation delay={400}>
-  <h3 className="text-center text-secondary font-semibold mt-12 mb-6">
-    IT SUPPORT TEAM
-  </h3>
-</ScrollAnimation>
+          </div>
+        </section>
 
-<div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-  {organizingTeam.ITsupport.map((member, index) => (
-    <ScrollAnimation key={member.name} delay={450 + index * 50}>
+       {/* ================= ORGANIZING TEAM ================= */}
+<section className="py-12 sm:py-16 relative z-10">
+  <div className="container mx-auto px-4 max-w-6xl">
+
+    {/* 🔶 GOVERNOR */}
+    <ScrollAnimation>
+      <h2 className="font-samarkan text-2xl sm:text-4xl neon-blue text-center mb-8">
+        CONVENERS
+      </h2>
+    </ScrollAnimation>
+
+    {organizingTeam.faculty.map((faculty, index) => (
+      <ScrollAnimation key={faculty.name} delay={index * 100}>
+        <div className="glass-card rounded-xl p-6 text-2xl text-center max-w-lg mx-auto mb-6">
+          <p className="text-4sm font-semibold neon-yellow">
+            {faculty.name}
+          </p>
+          <p className="text-white text-sm">
+            {faculty.role}
+          </p>
+        </div>
+      </ScrollAnimation>
+    ))}
+
+    {/* 🔶 CONVENORS */}
+    <ScrollAnimation delay={100}>
+      <h2 className="font-samarkan text-4xl sm:text-4xl neon-blue text-center mt-16 mb-8">
+        CO-CONVENERS
+      </h2>
+    </ScrollAnimation>
+
+    <div className="grid sm:grid-cols-2 justify-center text-xl lg:grid-cols-3 gap-6 ">
+      {organizingTeam.convener.map((person, index) => (
+        <ScrollAnimation key={person.name} delay={150 + index * 100}>
+          <div className="glass-card rounded-xl p-5 text-xl text-center">
+            <p className="font-semibold neon-yellow">
+              {person.name}
+            </p>
+            <p className="text-white text-sm">
+              {person.role}
+            </p>
+          </div>
+        </ScrollAnimation>
+      ))}
+    </div>
+
+    {/* 🔶 ORGANIZING COMMITTEE (HODs) */}
+    <ScrollAnimation delay={200}>
+      <h2 className="font-samarkan text-4xl sm:text-4xl neon-blue text-center mt-16 mb-8">
+        ORGANIZING COMMITTEE
+      </h2>
+    </ScrollAnimation>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {organizingTeam.hod.map((hod, index) => (
+        <ScrollAnimation key={hod.name} delay={250 + index * 80}>
+          <div className="glass-card text-xl rounded-xl p-5 text-center">
+            <p className="font-semibold neon-yellow">
+              {hod.name}
+            </p>
+            <p className="text-white text-sm">
+              {hod.role}
+            </p>
+          </div>
+        </ScrollAnimation>
+      ))}
+    </div>
+
+    {/* 🔶 STUDENT COORDINATORS */}
+    <ScrollAnimation delay={300}>
+      <h2 className="font-samarkan text-2xl sm:text-4xl neon-blue text-center mt-16 mb-8">
+        STUDENT COORDINATORS
+      </h2>
+    </ScrollAnimation>
+
+    <div className="grid sm:grid-cols-2 gap-6">
+  {organizingTeam.students.map((student, index) => (
+    <ScrollAnimation key={student.name} delay={350 + index * 80}>
       <div className="glass-card rounded-xl p-5 text-center">
-        <p className="font-semibold text-lg">{member.name}</p>
-         <p className="text-muted-foreground text-sm">
-                      {member.department}
-                    </p>
+
+        {/* Single Line: Name > Role > Department */}
+        <div className="flex justify-center items-baseline gap-2 flex-wrap">
+
+          <span className="text-yellow-400 text-xl font-bold">
+            {student.name}
+          </span>
+
+          <span className="text-green-300 text-base font-semibold">
+            {student.Role}
+          </span>
+
+          <span className="text-white text-sm">
+            {student.department}
+          </span>
+
+        </div>
+
+        {/* Phone Line */}
         <a
-          href={`tel:${member.phone}`}
-          className="text-secondary text-sm mt-1 inline-block hover:underline"
+          href={`tel:${student.phone}`}
+          className="block mt-2 text-lg font-semibold text-blue-400 drop-shadow-[0_0_8px_#00f0ff] hover:scale-105 transition"
         >
-          {member.phone}
+          {student.phone}
         </a>
+
       </div>
     </ScrollAnimation>
   ))}
 </div>
 
-          </div>
-        </section>
+
+    {/* 🔶 TEAM IMAGE */}
+    <ScrollAnimation delay={400}>
+      <div className="rounded-xl overflow-hidden border-4 border-primary/30 mt-12">
+        <img
+          src={teamImg}
+          alt="Organizing Team"
+          className="w-full h-64 sm:h-80 object-cover"
+        />
+      </div>
+    </ScrollAnimation>
+
+  </div>
+</section>
       </div>
     </Layout>
   );

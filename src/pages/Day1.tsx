@@ -49,14 +49,7 @@ const eventImages: Record<string, string> = {
   esports: esportsImg,
 };
 
-/* 👨‍🏫 FACULTY COORDINATOR */
-const facultyCoordinators = [
-  {
-    name: "Dr. M. Gopinath",
-    role: "Dean - Cultural Club's and Activities (CCA)",
-    phone: "9994041130",
-  },
-];
+
 
 const Day1 = () => {
   const soloEvents = day1Events.filter(e => e.category === "solo");
@@ -96,43 +89,22 @@ const Day1 = () => {
             <div className="container mx-auto px-4">
               <ScrollAnimation>
                 <div className="text-center max-w-3xl mx-auto">
-                  <h1 className="font-samarkan text-5xl md:text-7xl neon-yellow mb-6">
-                    Day 1
+                  <h1 className="font-samarkan text-7xl md:text-7xl neon-yellow mb-6">
+                    Day 1 Events
                   </h1>
-                  <p className="text-secondary uppercase tracking-widest text-sm mb-2">
-                    March 27th, 2026
-                  </p>
                   <p className="text-foreground/80 text-lg">
                     Dance • Photography • Gaming • Creativity
+                  </p>
+                  
+                  <p className="text-secondary uppercase tracking-widest text-xl mb-6 top-8 pt-3">
+                    March 27ᵗʰ, 2026
                   </p>
                 </div>
               </ScrollAnimation>
             </div>
           </section>
 
-          {/* FACULTY COORDINATOR */}
-          <section className="py-10">
-            <div className="container mx-auto px-4">
-              {facultyCoordinators.map(c => (
-                <div
-                  key={c.name}
-                  className="glass-card max-w-xl mx-auto p-6 text-center neon-border-blue"
-                >
-                  <p className="text-primary font-semibold">Faculty Coordinator</p>
-                  <p className="text-lg font-medium">{c.name}</p>
-                  <p className="text-muted-foreground">{c.role}</p>
-
-                  <a
-                    href={`tel:${c.phone}`}
-                    className="flex justify-center items-center gap-2 mt-3 text-secondary hover:underline"
-                  >
-                    <Phone size={16} />
-                    {c.phone}
-                  </a>
-                </div>
-              ))}
-            </div>
-          </section>
+        
 
           {/* SOLO EVENTS */}
           <section className="py-12">

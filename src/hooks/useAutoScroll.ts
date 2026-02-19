@@ -7,8 +7,8 @@ export const useAutoScroll = () => {
     let resumeTimeout: ReturnType<typeof setTimeout>;
     let currentSpeed = 0;
 
-    const baseSpeed = 0.5;     // readable slow speed
-    const smoothFactor = 0.05;
+    const baseSpeed = 0.75;     // readable slow speed
+    const smoothFactor = 0.75;
 
     const startAutoScroll = () => {
       isUserInteracting = false;
@@ -23,7 +23,7 @@ export const useAutoScroll = () => {
 
       resumeTimeout = setTimeout(() => {
         startAutoScroll();
-      }, 10000); // 10 sec idle
+      }, 7000); // 7 sec idle
     };
 
     const scroll = () => {

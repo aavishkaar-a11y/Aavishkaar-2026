@@ -80,7 +80,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground">Phone</p>
+                      <p className="text-xs text-muted-foreground text-yellow-500">Adityan P S</p>
                       <p className="font-medium">+91 9363972364</p>
+                      <p className="text-xs text-muted-foreground text-yellow-500">Sathvika Shree S</p>
                       <p className="font-medium">+91 7010 877900</p>
                     </div>
                   </a>
@@ -110,7 +112,7 @@ const Contact = () => {
                     <div>
                       <p className="text-xs text-muted-foreground">Event Dates</p>
                       <p className="font-medium">
-                        March 27th & 28th – 2026
+                        March 27ᵗʰ & 28ᵗʰ – 2026
                       </p>
                     </div>
                   </div>
