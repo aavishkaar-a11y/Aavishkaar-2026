@@ -80,148 +80,186 @@ const EventDetail = () => {
             </button>
 
             <ScrollAnimation>
-              <div className="max-w-4xl">
-                <span className="inline-block px-3 py-1 rounded-full bg-secondary/20 text-secondary text-sm mb-3">
-                  {event.category} Event
-                </span>
+  <div className="max-w-3xl mx-auto text-center">
 
-                {formType && (
-                  <span className="ml-3 inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm">
-                    {formType.toUpperCase()} EVENT
-                  </span>
-                )}
+    {/* Category Badge */}
+    <div className="flex justify-center gap-3 mb-4 flex-wrap">
+      <span className="px-4 py-1 rounded-full bg-secondary/20 text-secondary text-sm font-semibold">
+        {event.category} Event
+      </span>
 
-                <h1 className="font-samarkan text-3xl md:text-5xl neon-yellow mb-4">
-                  {event.title}
-                </h1>
+      {formType && (
+        <span className="px-4 py-1 rounded-full bg-primary/20 text-primary text-sm font-semibold">
+          {formType.toUpperCase()}
+        </span>
+      )}
+    </div>
 
-                <p className="text-foreground/80 text-base md:text-lg">
-                  {event.description}
-                </p>
-              </div>
-            </ScrollAnimation>
+    {/* Event Title */}
+    <h1 className="font-samarkan text-3xl md:text-5xl neon-yellow mb-6">
+      {event.title}
+    </h1>
+
+    {/* Description */}
+    <p className="text-foreground/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+      {event.description}
+    </p>
+
+  </div>
+</ScrollAnimation>
           </div>
         </section>
 
-        {/* CONTENT */}
-        <section className="py-12 relative z-10">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      {/* CONTENT */}
+<section className="py-12 relative z-10">
+  <div className="container mx-auto px-4">
 
-              {/* LEFT */}
-              <div className="lg:col-span-2 space-y-8">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-                {/* POSTER */}
-               <ScrollAnimation>
-  <div className="glass-card rounded-xl overflow-hidden">
-    {posterImage ? (
-      <img
-        src={posterImage}
-        alt={`${event.title} Poster`}
-        className="w-full h-full object-cover"
-      />
-    ) : (
-      <div className="aspect-video bg-black/40 flex items-center justify-center">
-        <div className="text-center">
-          <ImageIcon className="mx-auto mb-2 text-primary/50" size={48} />
-          <p className="font-semibold">Poster not available</p>
-        </div>
+      {/* LEFT : POSTER */}
+      <div className="lg:col-span-2">
+        <ScrollAnimation>
+          <div className="glass-card rounded-xl overflow-hidden">
+            {posterImage ? (
+              <img
+                src={posterImage}
+                alt={`${event.title} Poster`}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="aspect-video bg-black/40 flex items-center justify-center">
+                <div className="text-center">
+                  <ImageIcon className="mx-auto mb-2 text-primary/50" size={42} />
+                  <p className="font-semibold">Poster not available</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </ScrollAnimation>
       </div>
-    )}
+
+      {/* RIGHT : DETAILS */}
+      <div className="space-y-6">
+
+       {/* RULES */}
+<ScrollAnimation>
+  <div className="glass-card rounded-xl p-10 space-y-6">
+    <h2 className="text-2xl font-bold flex items-center gap-3">
+      <CheckCircle className="text-primary" size={24} />
+      Rules & Guidelines
+    </h2>
+
+    <ul className="space-y-5">
+      {event.rules.map((rule, index) => (
+        <li
+          key={index}
+          className="flex gap-4 text-base md:text-lg text-foreground/90 leading-relaxed"
+        >
+          <span className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center text-sm font-semibold shrink-0 mb-6">
+            {index + 1}
+          </span>
+          <span>{rule}</span>
+        </li>
+      ))}
+    </ul>
   </div>
 </ScrollAnimation>
 
-                {/* RULES */}
-                <ScrollAnimation delay={100}>
-                  <div className="glass-card rounded-xl p-6">
-                    <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                      <CheckCircle className="text-primary" />
-                      Rules & Guidelines
-                    </h2>
-                    <ul className="space-y-3">
-                      {event.rules.map((rule, index) => (
-                        <li key={index} className="flex gap-3 text-muted-foreground">
-                          <span className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center text-xs">
-                            {index + 1}
-                          </span>
-                          {rule}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </ScrollAnimation>
+        {/* PRIZES */}
+        <ScrollAnimation delay={100}>
+          <div className="glass-card rounded-xl p-6">
+            <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <Trophy className="text-primary" />
+              Cash Prizes
+            </h2>
 
-                {/* COORDINATORS */}
-                <ScrollAnimation delay={200}>
-                  <div className="glass-card rounded-xl p-6">
-                    <h2 className="text-xl font-semibold mb-4">
-                      Student Coordinators
-                    </h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {event.coordinators.map((coord) => (
-                        <CoordinatorCard key={coord.name} {...coord} />
-                      ))}
-                    </div>
-                  </div>
-                </ScrollAnimation>
+            {event.prizes.map((prize, i) => (
+              <div
+                key={i}
+                className="flex justify-between bg-muted/20 p-3 rounded-lg mb-2"
+              >
+                <span>{prize.position}</span>
+                <span className="text-primary font-semibold">
+                  {prize.amount}
+                </span>
               </div>
-
-              {/* RIGHT */}
-              <div className="space-y-6">
-
-                {/* PRIZES */}
-                <ScrollAnimation delay={150}>
-                  <div className="glass-card rounded-xl p-6">
-                    <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                      <Trophy className="text-primary" />
-                      Cash Prizes
-                    </h2>
-                    {event.prizes.map((prize, i) => (
-                      <div key={i} className="flex justify-between bg-muted/30 p-3 rounded-lg mb-2">
-                        <span>{prize.position}</span>
-                        <span className="text-primary font-semibold">
-                          {prize.amount}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </ScrollAnimation>
-
-                {/* ENTRY FEE */}
-                <ScrollAnimation delay={250}>
-                  <div className="glass-card rounded-xl p-6">
-                    <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                      <Ticket className="text-secondary" />
-                      Entry Fee
-                    </h2>
-                    <p className="text-2xl font-bold text-secondary">
-                      {event.fee}
-                    </p>
-                  </div>
-                </ScrollAnimation>
-
-                {/* REGISTER */}
-                <ScrollAnimation delay={350}>
-                  <Button
-                    asChild
-                    size="lg"
-                    className="w-full py-6 text-lg font-semibold"
-                    disabled={!formLink}
-                  >
-                    <a
-                      href={formLink || "#"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Register Now
-                      <ExternalLink className="ml-2 h-5 w-5" />
-                    </a>
-                  </Button>
-                </ScrollAnimation>
-              </div>
-            </div>
+            ))}
           </div>
-        </section>
+        </ScrollAnimation>
+
+        {/* ENTRY FEE */}
+        <ScrollAnimation delay={200}>
+          <div className="glass-card rounded-xl p-6">
+            <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
+              <Ticket className="text-secondary" />
+              Entry Fee
+            </h2>
+
+            <p className="text-2xl font-bold text-secondary">
+              {event.fee}
+            </p>
+          </div>
+        </ScrollAnimation>
+
+        {/* REGISTER BUTTON */}
+        <ScrollAnimation delay={300}>
+          <Button
+            asChild
+            size="lg"
+            className="w-full py-6 text-lg font-semibold"
+            disabled={!formLink}
+          >
+            <a
+              href={formLink || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register Now
+              <ExternalLink className="ml-2 h-5 w-5" />
+            </a>
+          </Button>
+        </ScrollAnimation>
+
+      </div>
+    </div>
+
+    {/* COORDINATORS FULL WIDTH BELOW */}
+    <div className="mt-16">
+      <ScrollAnimation>
+        <div className=" rounded-xl p-8">
+          <h2 className="text-2xl neon-blue font-semibold mb-6 text-center">
+            Student Coordinators
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            {event.coordinators.map((coord) => (
+              <div
+                key={coord.name}
+                className="rounded-lg border border-white/10 bg-black/50 p-4 text-center hover:scale-105 transition-all duration-300"
+              >
+                <p className="font-semibold text-lg neon-yellow">
+                  {coord.name}
+                </p>
+                <p className="font-semibold text-sm text-white">
+                  {coord.department}{coord.year ? `, ${coord.year}` : ""}
+                </p>
+                <a
+  href={`tel:${coord.phone}`}
+  className="block text-sm mt-1 text-green-400 font-semibold hover:text-green-300 transition-colors duration-200"
+>
+  {coord.phone}
+</a>
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </ScrollAnimation>
+    </div>
+
+  </div>
+</section>
       </div>
     </Layout>
   );

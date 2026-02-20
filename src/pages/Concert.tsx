@@ -49,6 +49,7 @@ const Concert = () => {
 
               {/* 🔥 ONLY GLOW HERE */}
               <ScrollAnimation delay={100}>
+                <h1 className="font-samarkan text-8xl md:text-9xl lg:text-10xl  neon-blue">Mega</h1>
                 <h1 className="font-samarkan text-6xl md:text-7xl lg:text-8xl mb-6">
                   <span className="neon-yellow">Pro Show</span>
                   

@@ -13,7 +13,7 @@ import { RollerCoaster } from "lucide-react";
 
 const patrons = [
   {
-    name: "Col. Prof. Vel. Dr. R. Rangarajan",
+    name: "Col. Prof. Vel. Dr. SHRI. R. Rangarajan",
     title: "Founder President and Chairman",
     description:
       "A visionary leader whose dedication and commitment have shaped the institution into a hub of excellence in education. His guidance continues to inspire the development of events like AAVISHKAAR, promoting the pursuit of talent and knowledge.",
@@ -27,7 +27,7 @@ const patrons = [
     image: cofounderImg,
   },
   {
-    name: "Mrs. Rangarajan Mahalakshmi Kishore",
+    name: "Dr. Mrs. Rangarajan Mahalakshmi Kishore",
     title: "Chairperson and Managing Trustee",
     description:
       "Ensures smooth institutional functioning and student growth. Her administrative excellence and dedication to student welfare have been key to the success of major events like AAVISHKAAR.",
@@ -51,16 +51,16 @@ const organizingTeam = {
   ],
   convener : [
       { name : " Dr. R. Suresh ",role : "Dean - SoMC and Dean T&P"},
-      { name : " Dr. P. Vijay Sarathi ",role : "Dean - IQAC"},
+      { name : " Dr. P. Vijayasarathi ",role : "Dean - IQAC"},
       { name : " Dr. J. B. Veeramalini",role : "Dean - PPT And HEAD-CHEM"},
-      { name : " Dr. A. Saravanaraj ",role : "Dean - R&D"},
-      { name : " Dr M. Suresh Chinnathampy ",role : "Dean - Mentoring And HEAD-ECE "},
+      { name : " Dr. A. Saravana Raj ",role : "Dean - R&D"},
+      { name : " Dr. M. Suresh Chinnathampy ",role : "Dean - Mentoring And HEAD-ECE "},
   ],
   hod : [
     { name: "Dr. M. Malleshwari",  role : "Head - IT" },
     { name: "Prof. Pradeep Katta",  role : "Head - S&H" },
     { name: "Dr. S. Durga Devi", role : "Head - CSE" },
-    { name: "Dr. R. Palani Samy",  role : "Head - MECH" },
+    { name: "Dr. R. PalaniSamy",  role : "Head - MECH" },
     { name: "Prof. M. Manoj Kumar", role : "Head - CIVIL" },
     { name: "Dr. S. Manoj Kumar", role : "Head - CSE-AIML" },
     { name: "Dr. J. Iyyappan",  role : "Head - BioTech" },
@@ -68,8 +68,8 @@ const organizingTeam = {
     { name: "Dr. S. Sathish Kumar",  role : "Head - AI&DS" },
   ],
   students: [
-    { name: "Mr. Charan. B, ", department: "AIDS, IV Year", phone: "8122334200", Role: "Secretary," },
-    { name: "Ms. Venanshiya. P,", department: "ECE, IV Year", phone: "6369453279", Role: "Joint Secretary,"},
+    { name: "Mr. B. Charan, ", department: "AIDS, IV Year", phone: "8122334200", Role: "Secretary," },
+    { name: "Ms. P. Venanshiya,", department: "ECE, IV Year", phone: "6369453279", Role: "Joint Secretary,"},
     
   ]
   
@@ -156,7 +156,7 @@ const Patrons = () => {
         </section>
 
 <h1 className="font-samarkan text-center text-4xl sm:text-7xl md:text-8xl neon-yellow mb-4">
-                PATRONS
+                PATRON
                 </h1>
                     {/* ================= PATRONS LIST ================= */}
         <section className="py-10 sm:py-16 relative z-10">

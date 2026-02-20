@@ -48,7 +48,7 @@ export function Navbar() {
             </Link>
             
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center text-xl gap-1">
               {topNavItems.map((item) => (
                 <Link
                   key={item.path}
@@ -113,8 +113,8 @@ export function Navbar() {
           className={cn(
             "px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300",
             isActive(item.path)
-              ? "bg-black text-yellow-400"
-              : "text-black hover:bg-black/10"
+              ? "bg-blue-950 text-yellow-400 "
+              : "text-blue-950 hover:bg-blue-950/10 text-sm"
           )}
         >
           {item.label}

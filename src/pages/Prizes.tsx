@@ -134,7 +134,7 @@ export default function Prizes() {
           <ScrollAnimation>
             <h2 className="text-3xl font-bold text-center mb-16 flex justify-center gap-3">
               <Crown className="text-yellow-400" size={34} />
-              GRAND PRIZES 
+              OVERALL COLLEGE TROPHY
             </h2>
           </ScrollAnimation>
 
