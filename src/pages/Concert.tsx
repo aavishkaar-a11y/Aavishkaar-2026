@@ -98,7 +98,7 @@ const Concert = () => {
                   <p className="text-muted-foreground mb-4 text-sm uppercase tracking-wider">
                     Countdown to Concert
                   </p>
-                  <CountdownTimer targetDate="2026-03-14T18:00:00" />
+                  <CountdownTimer targetDate="2026-03-28T18:00:00" />
                 </div>
               </ScrollAnimation>
 

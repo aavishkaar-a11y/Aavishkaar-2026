@@ -68,7 +68,7 @@ const organizingTeam = {
     { name: "Dr. S. Sathish Kumar",  role : "Head - AI&DS" },
   ],
   students: [
-    { name: "Mr. B. Charan, ", department: "AIDS, IV Year", phone: "8122334200", Role: "Secretary," },
+    { name: "Mr. B. Charan, ", department: "AI&DS, IV Year", phone: "8122334200", Role: "Secretary," },
     { name: "Ms. P. Venanshiya,", department: "ECE, IV Year", phone: "6369453279", Role: "Joint Secretary,"},
     
   ]
