@@ -31,7 +31,7 @@ export function HeroSection() {
           </h1>
 
           {/* Tagline */}
-          <p className="text-xl md:text-2xl text-foreground/80 mb-4 NEON-BLUE text-bold animate-slide-in-right font-light italic" style={{ animationDelay: "0.2s" }}>
+          <p className="text-xl md:text-2xl text-foreground/80 mb-4 text-bold animate-slide-in-right font-light italic" style={{ animationDelay: "0.2s" }}>
             Unleashed Vibes; Unmatched Energy
           </p>
 
