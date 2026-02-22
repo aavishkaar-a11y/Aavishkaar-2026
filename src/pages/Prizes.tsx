@@ -61,10 +61,11 @@ function launchConfetti(container: HTMLDivElement, count = 80) {
 export default function Prizes() {
   const heroRef = useRef<HTMLDivElement>(null);
   const confettiRef = useRef<HTMLDivElement>(null);
-  const [startCount, setStartCount] = useState(false);
 
-  const isMobile =
-    typeof window !== "undefined" && window.innerWidth < 768;
+  const [startCount, setStartCount] = useState(false);
+  const [selectedPrize, setSelectedPrize] = useState<
+    null | "first" | "second" | "third"
+  >(null);
 
   const totalPrize = useCountUp(150000, startCount);
 
@@ -81,9 +82,9 @@ export default function Prizes() {
     setStartCount(true);
 
     if (confettiRef.current) {
-      launchConfetti(confettiRef.current, isMobile ? 40 : 100);
+      launchConfetti(confettiRef.current, 80);
     }
-  }, [isMobile]);
+  }, []);
 
   return (
     <Layout>
@@ -116,7 +117,7 @@ export default function Prizes() {
           </h1>
 
           <p className="hero-sub text-muted-foreground mb-6">
-            🎭 AAVISHKAAR 2026 • March 27 & 28
+            Points earned in every event will determine the champion.
           </p>
 
           <div className="hero-prize inline-block px-10 py-8 rounded-3xl border-2 border-yellow-400 glow">
@@ -129,71 +130,102 @@ export default function Prizes() {
           </div>
         </section>
 
-        {/* ================= GRAND PRIZES ================= */}
-        <section className="container mx-auto px-4 py-24">
+        {/* ================= TROPHY SYSTEM ================= */}
+        <section className="container mx-auto px-4 py-24 relative z-30">
+
           <ScrollAnimation>
             <h2 className="text-3xl font-bold text-center mb-16 flex justify-center gap-3">
               <Crown className="text-yellow-400" size={34} />
-              OVERALL COLLEGE TROPHY
+              OVERALL POINTS SYSTEM
             </h2>
           </ScrollAnimation>
 
           <div className="grid sm:grid-cols-3 gap-10">
-            {["🥇 1st Prize", "🥈 2nd Prize", "🥉 3rd Prize"].map((p) => (
-              <ScrollAnimation key={p}>
-                  <div className="trophy-card flex flex-col items-center justify-center text-center">
-                  <h3 className="text-xl font-bold ">{p}</h3>
-                  <p className="text-muted-foreground">
-                    
+
+            {[
+              { label: "🥇 1st Prize", key: "first" },
+              { label: "🥈 2nd Prize", key: "second" },
+              { label: "🥉 3rd Prize", key: "third" },
+            ].map((item) => (
+              <ScrollAnimation key={item.key}>
+                <div
+                  onClick={() =>
+                    setSelectedPrize(item.key as any)
+                  }
+                  className={`trophy-card cursor-pointer hover:scale-105 transition-all duration-300 ${
+                    selectedPrize === item.key
+                      ? "ring-2 ring-yellow-400"
+                      : ""
+                  }`}
+                >
+                  <h3 className="text-xl font-bold">
+                    {item.label}
+                  </h3>
+                  <p className="text-muted-foreground mt-2">
+                    Click to see points
                   </p>
                 </div>
               </ScrollAnimation>
             ))}
           </div>
-        </section>
 
-        {/* ================= EVENT PRIZES ================= */}
-        <section className="container mx-auto px-4 pb-32">
-          <ScrollAnimation>
-            <h2 className="text-3xl font-bold text-center mb-16">
-              Event-Wise Prizes
-            </h2>
-          </ScrollAnimation>
+          {/* ================= DYNAMIC DETAILS ================= */}
+          {selectedPrize && (
+            <div className="mt-14 max-w-3xl mx-auto text-center trophy-card">
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {allEvents.map((event) => {
-              const total = event.prizes.reduce(
-                (s, p) => s + Number(p.amount.replace(/\D/g, "")),
-                0
-              );
+              {selectedPrize === "first" && (
+                <>
+                  <h3 className="text-2xl font-bold text-yellow-400 mb-4">
+                    🥇 1st Prize = 15 Points
+                  </h3>
+                  <p className="text-lg">
+                    Winning First Prize in any event earns
+                    <span className="text-yellow-400 font-bold">
+                      {" "}15 Championship Points
+                    </span>.
+                  </p>
+                </>
+              )}
 
-              const count = useCountUp(total, startCount);
+              {selectedPrize === "second" && (
+                <>
+                  <h3 className="text-2xl font-bold text-yellow-400 mb-4">
+                    🥈 2nd Prize = 10 Points
+                  </h3>
+                  <p className="text-lg">
+                    Winning Second Prize in any event earns
+                    <span className="text-yellow-400 font-bold">
+                      {" "}10 Championship Points
+                    </span>.
+                  </p>
+                </>
+              )}
 
-              return (
-                <ScrollAnimation key={event.id}>
-                  <div className="event-card">
-                    <h3 className="neon-yellow font-semibold mb-2">
-                      {event.title}
-                    </h3>
+              {selectedPrize === "third" && (
+                <>
+                  <h3 className="text-2xl font-bold text-yellow-400 mb-4">
+                    🥉 3rd Prize = 5 Points
+                  </h3>
+                  <p className="text-lg">
+                    Winning Third Prize in any event earns
+                    <span className="text-yellow-400 font-bold">
+                      {" "}5 Championship Points
+                    </span>.
+                  </p>
+                </>
+              )}
 
-                    <p className="text-primary mb-3">
-                      ₹{count.toLocaleString()}
-                    </p>
+              <p className="text-muted-foreground mt-6 leading-relaxed">
+                All points will be accumulated across events.
+                The college with the highest total points will be crowned
+                <span className="text-yellow-400 font-semibold">
+                  {" "}Overall College Champion
+                </span>.
+                The Top 3 colleges will receive a special trophy.
+              </p>
 
-                    {event.prizes.map((p, i) => (
-                      <div
-                        key={i}
-                        className="flex justify-between bg-muted/20 px-3 py-2 rounded text-sm mb-2"
-                      >
-                        <span>{p.position}</span>
-                        <span>{p.amount}</span>
-                      </div>
-                    ))}
-                  </div>
-                </ScrollAnimation>
-              );
-            })}
-          </div>
+            </div>
+          )}
         </section>
 
         {/* ================= STYLES ================= */}
@@ -211,10 +243,9 @@ export default function Prizes() {
             animation: pulse 3s infinite;
           }
 
-          .trophy-card,
-          .event-card {
+          .trophy-card {
             background: rgba(0,0,0,.6);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 1.25rem;
             box-shadow: 0 0 25px rgba(250,204,21,.25);
           }
@@ -224,6 +255,7 @@ export default function Prizes() {
             50% { box-shadow: 0 0 90px rgba(250,204,21,1); }
           }
         `}</style>
+
       </div>
     </Layout>
   );
