@@ -13,7 +13,7 @@ import { RollerCoaster } from "lucide-react";
 
 const patrons = [
   {
-    name: "Col. Prof. Vel. SHRI. Dr. R. Rangarajan",
+    name: "Col. Prof. Vel. Shri. Dr. R. Rangarajan",
     title: "Founder President and Chairman",
     description:
       "A visionary leader whose dedication and commitment have shaped the institution into a hub of excellence in education. His guidance continues to inspire the development of events like AAVISHKAAR, promoting the pursuit of talent and knowledge.",
