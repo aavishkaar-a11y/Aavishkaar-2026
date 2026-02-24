@@ -31,7 +31,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* About Section */}
           <div className="lg:col-span-1">
-            <h3 className="font-samarkan text-2xl neon-yellow mb-4">aavishkaar-2026</h3>
+            <h3 className="font-samarkan text-2xl neon-yellow mb-4">aavishkaar 2026</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               A 6ᵗʰ Mega cultural event celebrating talent, creativity, innovation, 
               and culture, bringing students together on one grand stage.
@@ -141,7 +141,7 @@ export function Footer() {
 
     {/* Designation */}
     <p className="text-gray-300 text-[10px] leading-tight mb-2">
-      Dean – Clubs & Culturals Activities (CCA)
+      Dean – Clubs & Cultural Activities (CCA)
     </p>
 
     {/* Phone */}

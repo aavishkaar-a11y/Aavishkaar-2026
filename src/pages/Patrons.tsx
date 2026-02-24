@@ -13,7 +13,7 @@ import { RollerCoaster } from "lucide-react";
 
 const patrons = [
   {
-    name: "Col. Prof. Vel. Dr. SHRI. R. Rangarajan",
+    name: "Col. Prof. Vel. SHRI. Dr. R. Rangarajan",
     title: "Founder President and Chairman",
     description:
       "A visionary leader whose dedication and commitment have shaped the institution into a hub of excellence in education. His guidance continues to inspire the development of events like AAVISHKAAR, promoting the pursuit of talent and knowledge.",
@@ -47,7 +47,7 @@ const patrons = [
 const organizingTeam = {
   faculty: [
     { name: "Dr. V. R. Ravi", role: "Dean - Academics"},
-    { name: "Dr. M. Gopinath", role: "Dean – Clubs & Culturals Activities (CCA)" }
+    { name: "Dr. M. Gopinath", role: "Dean – Clubs & Cultural Activities (CCA)" }
   ],
   convener : [
       { name : " Dr. R. Suresh ",role : "Dean - SoMC and Dean T&P"},
@@ -107,9 +107,7 @@ const Patrons = () => {
                 <h1 className="font-samarkan text-3xl sm:text-7xl md:text-8xl neon-yellow mb-4">
                   CHIEF PATRONS
                 </h1>
-                <p className="text-muted-foreground text-sm sm:text-lg">
-                  The guiding lights behind Vel Tech Group of Colleges
-                </p>
+               
               </div>
             </ScrollAnimation>
           </div>
