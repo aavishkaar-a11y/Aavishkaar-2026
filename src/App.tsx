@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,43 +18,45 @@ import NotFound from "./pages/NotFound";
 import Prizes from "./pages/Prizes";
 import Team from "@/pages/team";
 
-
 import BackgroundMusic from "@/components/ui/BackgroundMusic";
-import { IntroVideo } from "@/components/ui/IntroVideo";
+import IntroVideo from "@/components/ui/IntroVideo";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
+const App = () => {
+  const [showIntro, setShowIntro] = useState(true);
 
-      <BrowserRouter>
-        {/* Background music (optional) */}
-        <BackgroundMusic />
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
 
-        {/* 🔥 INTRO VIDEO ONLY */}
-        <IntroVideo />
+        {showIntro ? (
+          <IntroVideo onFinish={() => setShowIntro(false)} />
+        ) : (
+          <BrowserRouter>
+            <BackgroundMusic />
 
-        {/* ROUTES */}
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about-event" element={<AboutEvent />} />
-          <Route path="/patrons" element={<Patrons />} />
-         
-          <Route path="/day-1" element={<Day1 />} />
-          <Route path="/day-2" element={<Day2 />} />
-          <Route path="/concert" element={<Concert />} />
-          <Route path="/event/:id" element={<EventDetail />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/prizes" element={<Prizes />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about-event" element={<AboutEvent />} />
+              <Route path="/patrons" element={<Patrons />} />
+              <Route path="/day-1" element={<Day1 />} />
+              <Route path="/day-2" element={<Day2 />} />
+              <Route path="/concert" element={<Concert />} />
+              <Route path="/event/:id" element={<EventDetail />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/prizes" element={<Prizes />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        )}
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
