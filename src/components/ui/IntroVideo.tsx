@@ -30,7 +30,7 @@ const IntroVideo = ({ onFinish }: IntroVideoProps) => {
   }, 200);
 
     // Stage timing (16 sec smooth flow)
-    setTimeout(() => setStage(1), 2000);
+    setTimeout(() => setStage(1), 1000);
     setTimeout(() => setStage(2), 5000);
     setTimeout(() => setStage(3), 9000);
 
