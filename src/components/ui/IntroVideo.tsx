@@ -10,51 +10,50 @@ const text = "AAVISHKAAR";
 const IntroVideo = ({ onFinish }: IntroVideoProps) => {
   const [stage, setStage] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  useEffect(() => {
+useEffect(() => {
   const audio = new Audio("/audio/intro.mp3");
-  audio.volume = 0; // start silent
+  audio.volume = 0;
   audioRef.current = audio;
 
   audio.play().catch(() => {});
 
   let vol = 0;
 
+  // Faster fade in
   const fadeIn = setInterval(() => {
     if (vol < 0.8) {
-      vol += 0.05;
+      vol += 0.2;
       audio.volume = vol;
     } else {
       clearInterval(fadeIn);
     }
-  }, 200);
+  }, 80);
 
-    // Stage timing (16 sec smooth flow)
-    setTimeout(() => setStage(1), 1000);
-    setTimeout(() => setStage(2), 5000);
-    setTimeout(() => setStage(3), 9000);
+  // Ultra fast stage timing (5 sec total)
+  setTimeout(() => setStage(1), 300);
+  setTimeout(() => setStage(2), 800);
+  setTimeout(() => setStage(3), 1500);
 
-    // Fade out audio before exit
-    setTimeout(() => {
-      let fadeOutVol = audio.volume;
-      const fadeOut = setInterval(() => {
-        if (fadeOutVol > 0) {
-          fadeOutVol -= 0.05;
-          audio.volume = fadeOutVol;
-        } else {
-          clearInterval(fadeOut);
-          audio.pause();
-        }
-      }, 200);
-    }, 14000);
+  // Fade out audio before exit
+  setTimeout(() => {
+    let fadeOutVol = audio.volume;
+    const fadeOut = setInterval(() => {
+      if (fadeOutVol > 0) {
+        fadeOutVol -= 0.2;
+        audio.volume = fadeOutVol;
+      } else {
+        clearInterval(fadeOut);
+        audio.pause();
+      }
+    }, 80);
+  }, 4000);
 
-    setTimeout(() => onFinish(), 16000);
+  setTimeout(() => onFinish(), 5000);
 
-    return () => {
-      audio.pause();
-    };
-  }, [onFinish]);
-
+  return () => {
+    audio.pause();
+  };
+}, [onFinish]);
   return (
     <AnimatePresence>
       <motion.div
@@ -70,7 +69,7 @@ const IntroVideo = ({ onFinish }: IntroVideoProps) => {
         {/* Smooth Camera Zoom */}
         <motion.div
           animate={{ scale: [1, 1.08] }}
-          transition={{ duration: 16, ease: "easeOut" }}
+          transition={{ duration: 6, ease: "easeOut" }}
           className="absolute inset-0 flex items-center justify-center"
         >
 
