@@ -129,7 +129,7 @@ const IntroVideo = ({ onFinish }: IntroVideoProps) => {
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                    className="text-6xl font-samarkan sm:text-8xl md:text-[140px]
+                    className="text-5xl font-samarkan sm:text-7xl md:text-[120px]
                     font-bold tracking-widest text-yellow-400"
                     style={{
                       textShadow:
