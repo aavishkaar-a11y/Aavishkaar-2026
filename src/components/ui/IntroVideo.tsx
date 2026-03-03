@@ -162,7 +162,7 @@ const IntroVideo = ({ onFinish }: IntroVideoProps) => {
                 transition={{ delay: 1, duration: 2 }}
                 className="mt-6 text-lg sm:text-xl md:text-2xl text-yellow-300"
               >
-                Unleashed Energy. Unmatched Vibe.
+                Unleashed Vibe. Unmatched Energy.
               </motion.p>
             )}
 
