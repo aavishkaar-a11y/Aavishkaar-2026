@@ -20,14 +20,14 @@ const patrons = [
     image: founderImg,
   },
   {
-    name: "Late Dr. (Mrs.) Sakunthala Rangarajan",
+    name: "Late. Dr. (Mrs). Sakunthala Rangarajan",
     title: "Foundress President and Vice-Chairman",
     description:
       "A compassionate leader nurturing innovation and excellence. Her unwavering support and vision have been instrumental in fostering cultural activities and student development at the institution.",
     image: cofounderImg,
   },
   {
-    name: "Dr. Mrs. Rangarajan Mahalakshmi Kishore",
+    name: "Dr. (Mrs). Rangarajan Mahalakshmi Kishore",
     title: "Chairperson and Managing Trustee",
     description:
       "Ensures smooth institutional functioning and student growth. Her administrative excellence and dedication to student welfare have been key to the success of major events like AAVISHKAAR.",
@@ -58,14 +58,15 @@ const organizingTeam = {
   ],
   hod : [
     { name: "Dr. M. Malleshwari",  role : "Head - IT" },
-    { name: "Prof. Pradeep Katta",  role : "Head - S&H" },
     { name: "Dr. S. Durga Devi", role : "Head - CSE" },
-    { name: "Dr. R. PalaniSamy",  role : "Head - MECH" },
-    { name: "Prof. M. Manoj Kumar", role : "Head - CIVIL" },
+    { name: "Dr. S. Sathish Kumar",  role : "Head - AI&DS" },
     { name: "Dr. S. Manoj Kumar", role : "Head - CSE-AIML" },
     { name: "Dr. J. Iyyappan",  role : "Head - BioTech" },
-    { name: "Prof. N. Nagarajan", role : "Head - MBA" },
-    { name: "Dr. S. Sathish Kumar",  role : "Head - AI&DS" },
+    { name: "Dr. R. PalaniSamy",  role : "Head - MECH" },
+    { name: "Dr. V. Subaramania Bharathi", role : "Head - CIVIL" },
+    { name: "Dr. K. S. Balaji", role : "Head - MBA" },
+    { name: "Prof. Pradeep Katta",  role : "Head - S&H" },
+    
   ],
   students: [
     { name: "Mr. B. Charan, ", department: "AI&DS, IV Year", phone: "8122334200", Role: "Secretary," },
