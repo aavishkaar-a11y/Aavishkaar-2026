@@ -20,7 +20,7 @@ const patrons = [
     image: founderImg,
   },
   {
-    name: "Late Dr. Mrs. Sakunthala Rangarajan",
+    name: "Late Dr. (Mrs.) Sakunthala Rangarajan",
     title: "Foundress President and Vice-Chairman",
     description:
       "A compassionate leader nurturing innovation and excellence. Her unwavering support and vision have been instrumental in fostering cultural activities and student development at the institution.",
