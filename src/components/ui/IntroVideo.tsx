@@ -10,81 +10,81 @@ const text = "AAVISHKAAR";
 const IntroVideo = ({ onFinish }: IntroVideoProps) => {
   const [stage, setStage] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-useEffect(() => {
-  const audio = new Audio("/audio/intro.mp3");
-  audio.volume = 0;
-  audioRef.current = audio;
 
-  audio.play().catch(() => {});
+  useEffect(() => {
+    const audio = new Audio("/audio/intro.mp3");
+    audio.volume = 0;
+    audioRef.current = audio;
 
-  let vol = 0;
+    audio.play().catch(() => {});
 
-  // Faster fade in
-  const fadeIn = setInterval(() => {
-    if (vol < 0.8) {
-      vol += 0.2;
-      audio.volume = vol;
-    } else {
-      clearInterval(fadeIn);
-    }
-  }, 80);
+    let vol = 0;
 
-  // Ultra fast stage timing (5 sec total)
-  setTimeout(() => setStage(1), 300);
-  setTimeout(() => setStage(2), 800);
-  setTimeout(() => setStage(3), 1500);
-
-  // Fade out audio before exit
-  setTimeout(() => {
-    let fadeOutVol = audio.volume;
-    const fadeOut = setInterval(() => {
-      if (fadeOutVol > 0) {
-        fadeOutVol -= 0.2;
-        audio.volume = fadeOutVol;
+    const fadeIn = setInterval(() => {
+      if (vol < 0.8) {
+        vol += 0.2;
+        audio.volume = vol;
       } else {
-        clearInterval(fadeOut);
-        audio.pause();
+        clearInterval(fadeIn);
       }
-    }, 80);
-  }, 4000);
+    }, 100);
 
-  setTimeout(() => onFinish(), 5000);
+    setTimeout(() => setStage(1), 300);
+    setTimeout(() => setStage(2), 800);
+    setTimeout(() => setStage(3), 1500);
 
-  return () => {
-    audio.pause();
-  };
-}, [onFinish]);
+    setTimeout(() => {
+      let fadeOutVol = audio.volume;
+      const fadeOut = setInterval(() => {
+        if (fadeOutVol > 0) {
+          fadeOutVol -= 0.2;
+          audio.volume = fadeOutVol;
+        } else {
+          clearInterval(fadeOut);
+          audio.pause();
+        }
+      }, 100);
+    }, 4000);
+
+    setTimeout(() => onFinish(), 5000);
+
+    return () => {
+      audio.pause();
+    };
+  }, [onFinish]);
+
   return (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 1 }}
-        exit={{ opacity: 0, backgroundColor: "#0a1d4d" }}
-        transition={{ duration: 2 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
         className="fixed inset-0 flex items-center justify-center z-[9999] overflow-hidden"
         style={{
           background:
             "radial-gradient(circle at center, #0a1d4d 0%, #000814 80%)",
         }}
       >
-        {/* Smooth Camera Zoom */}
+        {/* Smooth Zoom */}
         <motion.div
-          animate={{ scale: [1, 1.08] }}
-          transition={{ duration: 6, ease: "easeOut" }}
+          animate={{ scale: [1, 1.06] }}
+          transition={{ duration: 4, ease: "easeOut" }}
           className="absolute inset-0 flex items-center justify-center"
+          style={{ willChange: "transform" }}
         >
 
-          {/* Rotating Depth Glow */}
+          {/* Soft Glow */}
           <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-            className="absolute w-[1200px] h-[1200px] rounded-full 
-            bg-gradient-to-tr from-blue-700/20 via-yellow-400/10 to-transparent 
-            blur-3xl"
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 8, repeat: Infinity }}
+            className="absolute w-[700px] h-[700px] rounded-full
+            bg-gradient-to-tr from-blue-700/20 via-yellow-400/10 to-transparent
+            blur-2xl"
           />
 
-          {/* Floating Particles */}
+          {/* Particles */}
           <div className="absolute inset-0 pointer-events-none">
-            {[...Array(40)].map((_, i) => (
+            {[...Array(18)].map((_, i) => (
               <motion.span
                 key={i}
                 className="absolute rounded-full"
@@ -96,11 +96,11 @@ useEffect(() => {
                   left: `${Math.random() * 100}%`,
                 }}
                 animate={{
-                  y: [-20, -200],
+                  y: [-10, -120],
                   opacity: [0.8, 0],
                 }}
                 transition={{
-                  duration: 10 + Math.random() * 4,
+                  duration: 6 + Math.random() * 2,
                   repeat: Infinity,
                   ease: "easeOut",
                 }}
@@ -111,28 +111,24 @@ useEffect(() => {
           {/* Content */}
           <div className="text-center relative px-4">
 
-            {/* AAVISHKAAR */}
+            {/* Title */}
             {stage >= 2 && (
-              <div className="flex justify-center flex-wrap samarakan">
+              <div className="flex justify-center flex-wrap">
                 {text.split("").map((letter, index) => (
                   <motion.span
                     key={index}
-                    initial={{ y: 100, opacity: 0 }}
-                    animate={{
-                      y: [0, -12, 0, 12, 0],
-                      opacity: 1,
-                    }}
+                    initial={{ y: 80, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
                     transition={{
-                      delay: index * 0.2,
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "easeInOut",
+                      delay: index * 0.08,
+                      duration: 0.8,
+                      ease: "easeOut",
                     }}
-                    className="text-5xl font-samarkan sm:text-7xl md:text-[120px]
+                    className="text-5xl sm:text-7xl md:text-[110px]
                     font-bold tracking-widest text-yellow-400"
                     style={{
                       textShadow:
-                        "0 0 15px #facc15, 0 0 40px #fbbf24, 0 0 80px #f59e0b",
+                        "0 0 12px #facc15, 0 0 30px #fbbf24, 0 0 60px #f59e0b",
                     }}
                   >
                     {letter}
@@ -146,8 +142,8 @@ useEffect(() => {
               <motion.h2
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 2 }}
-                className="text-4xl sm:text-6xl md:text-8xl font-samarkan font-bold text-blue-400 mt-6"
+                transition={{ duration: 0.8 }}
+                className="text-4xl sm:text-6xl md:text-8xl font-bold text-blue-400 mt-6"
               >
                 2026
               </motion.h2>
@@ -158,7 +154,7 @@ useEffect(() => {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 2 }}
+                transition={{ delay: 0.5, duration: 1 }}
                 className="mt-6 text-lg sm:text-xl md:text-2xl text-yellow-300"
               >
                 Unleashed Vibe. Unmatched Energy.
@@ -171,11 +167,11 @@ useEffect(() => {
                 {[0, 1, 2].map((dot) => (
                   <motion.div
                     key={dot}
-                    animate={{ y: [0, -10, 0] }}
+                    animate={{ y: [0, -8, 0] }}
                     transition={{
-                      duration: 1.2,
+                      duration: 1,
                       repeat: Infinity,
-                      delay: dot * 0.3,
+                      delay: dot * 0.2,
                     }}
                     className="w-3 h-3 bg-yellow-400 rounded-full"
                   />
