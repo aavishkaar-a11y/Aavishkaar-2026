@@ -124,7 +124,7 @@ const IntroVideo = ({ onFinish }: IntroVideoProps) => {
                       duration: 0.8,
                       ease: "easeOut",
                     }}
-                    className="text-5xl sm:text-6xl md:text-[120px]
+                    className="text-5xl sm:text-6xl md:text-[115px]
                     font-bold tracking-widest font-samarkan text-yellow-400"
                     style={{
                       textShadow:
