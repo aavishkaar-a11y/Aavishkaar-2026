@@ -87,8 +87,8 @@ export const day1Events: EventData[] = [
     ],
     fee: "₹236 (inclusive 18% GST)",
     coordinators: [
-      { name: "Nithish K", department: "CSE", year: "III Year", phone: "9500633568" },
-      { name: "Krishna K", department: "Civil", year: "III Year", phone: "8124835538" },
+      { name: "Vijay Sai", department: "AI&DS", year: "IV Year", phone: "9445344740" },
+      { name: "Pavana J", department: "Mech", year: "III Year", phone: "7418311039" },
       { name: "Deekshita K R", department: "ECE", year: "II Year", phone: "9080566376" },
       { name: "Magishwari M", department: "Biotech", year: "I Year", phone: "9344430810" }
     ]
@@ -141,7 +141,7 @@ export const day1Events: EventData[] = [
     coordinators: [
       { name: "Sanjay M", department: "ECE", year: "IV", phone: "9884802322" },
       { name: "Pradeep Balaji", department: "Chem", year: "III", phone: "9176067315" },
-      { name: "Kirthika V M", department: "AI&DS", year: "II", phone: "7395834352" },
+      { name: "Kirthika V M", department: "AI&DS", year: "III", phone: "7395834352" },
       {name : "Mokshitha G", department : "CSE", year : "I", phone : "9080719418"}
     ]
   },
@@ -191,7 +191,7 @@ export const day1Events: EventData[] = [
     ],
     fee: "₹885 (inclusive 18% GST)",
     coordinators: [
-      { name: "Yogasree S", department: "IT", year: "IV Year", phone: "8778668919" },
+      { name: "Sanjay Kumar E", department: "EcE", year: "IV Year", phone: "7397477730" },
       { name: "Bala Saminathan M", department: "AI&DS", year: "III Year", phone: "6380335438" },
       { name: "Srilekha S", department: "AI&DS", year: "II Year", phone: "9345301594" },
       { name: "Anish Adhithyan K B", department: "ECE", year: "I Year", phone: "6374277356" }
@@ -219,7 +219,7 @@ export const day1Events: EventData[] = [
     coordinators: [
       { name: "Thanigai Raj S", department: "ECE", year: "IV Year", phone: "7604973726" },
       { name: "Lakshanika T G K ", department: "CSE", year: "III Year", phone: "7305872675" },
-      { name: "Surendhar M", department: "AI&DS", year: "II Year", phone: "7305167354" },
+      { name: "Ronik Samuel S", department: "AI&DS", year: "II Year", phone: "8939776816" },
       { name: "Navatheep sing K N", department: "CSE-AIML", year: "I Year", phone: "6381687767" }
     ]
   }
@@ -258,8 +258,9 @@ export const day2Events: EventData[] = [
     category: "group",
     description: "Walk the runway with confidence! Showcase your style in Cosplay or Corporate Walk categories.",
     rules: [
+      "Participants can choose between cosplay or corporate walk",
       "Cosplay: 1–2 min performance + explanation",
-      "Corporate walk: 3–4 min (team)",
+      "Corporate walk: 5–7 min (team)",
       "Decency mandatory",
       "Props allowed for Cosplay",
       "Judges' decision is final"
@@ -268,7 +269,6 @@ export const day2Events: EventData[] = [
      { position: "1st", amount: "₹5,000" },
       { position: "2nd", amount: "₹3,000" },
       { position: "3rd", amount: "₹2,000" },
-     
     ],
     fee: "₹885 (inclusive 18% GST)",
     coordinators: [

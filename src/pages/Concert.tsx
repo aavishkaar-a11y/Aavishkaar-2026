@@ -12,7 +12,11 @@ import {
 import { ScrollAnimation } from "@/components/ui/ScrollAnimation";
 import { CountdownTimer } from "@/components/home/CountdownTimer";
 import proShowPoster from "@/assets/pro-show.jpeg";
-
+import guest1 from "@/assets/guest1.jpg";
+import guest2 from "@/assets/guest2.jpg";
+import guest3 from "@/assets/guest3.jpg";
+import guest4 from "@/assets/guest4.jpg";
+import guest5 from "@/assets/guest5.jpg";
 
 const Concert = () => {
   return (
@@ -80,18 +84,50 @@ const Concert = () => {
   </div>
 </ScrollAnimation>
 
+{/* GUEST LINEUP */}
+<ScrollAnimation delay={400}>
+  <div className="max-w-4xl mx-auto mb-12 px-4">
 
-              {/* COMING SOON */}
-              <ScrollAnimation delay={400}>
-                <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full glass-card neon-border-blue mb-12">
-                  <Music size={28} />
-                  <span className="text-lg md:text-xl font-semibold">
-                    Artist Reveal Coming Soon
-                  </span>
-                  <Sparkles size={28} />
-                </div>
-              </ScrollAnimation>
+    <h3 className="text-center text-xl md:text-2xl font-semibold mb-6 neon-blue">
+      Pro Show Lineup
+    </h3>
+   <div className="flex items-center justify-center gap-2 mb-4">
+  <h3 className="text-center text-lg md:text-xl font-bold tracking-wide neon-yellow">
+    🎤 Vinaita Live on Stage
+  </h3>
+</div>
 
+    {/* MAIN GUEST */}
+    <div className="flex justify-center mb-6">
+      <div className="w-40 md:w-52 lg:w-60 rounded-xl overflow-hidden neon-border-yellow bg-black/40">
+        <img
+          src={guest1}
+          alt="Main Guest"
+          className="w-full h-48 md:h-56 object-cover"
+        />
+      </div>
+    </div>
+
+    {/* OTHER GUESTS */}
+    <div className="grid grid-cols-2 gap-4 justify-items-center">
+
+      {[guest2, guest3, guest4, guest5].map((guest, index) => (
+        <div
+          key={index}
+          className="w-36 md:w-44 lg:w-48 rounded-lg overflow-hidden neon-border-blue bg-black/40"
+        >
+          <img
+            src={guest}
+            alt={`Guest ${index + 2}`}
+            className="w-full h-32 md:h-40 object-cover"
+          />
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</ScrollAnimation>
               {/* COUNTDOWN */}
               <ScrollAnimation delay={500}>
                 <div className="mb-8">
