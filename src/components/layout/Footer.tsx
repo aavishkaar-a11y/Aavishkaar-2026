@@ -79,7 +79,7 @@ export function Footer() {
                 href="tel:+919363972364"
                 className="flex items-center gap-2 text-muted-foreground hover:text-secondary transition-colors text-sm"
               >              <h3 className="text-white text-sm font-semibold leading-tight mb-1">
-      Adityan P S
+      Aditya P S
     </h3>
                 <Phone size={16} />
                 +91 9363972364 
