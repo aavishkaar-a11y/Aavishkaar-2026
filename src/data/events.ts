@@ -151,6 +151,7 @@ export const day1Events: EventData[] = [
     category: "group",
     description: "Unite, synchronize, and mesmerize! Bring your crew and set the stage on fire with your choreography.",
     rules: [
+      "Event timing 3:00 PM - 9:30 PM",
       "Team of 6-12 members",
       "Maximum time: 8 minutes",
       "Props allowed (self-arranged)",
