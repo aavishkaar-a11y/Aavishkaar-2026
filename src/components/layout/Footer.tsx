@@ -192,7 +192,7 @@ export function Footer() {
         <div className="border-t border-border/50 pt-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm text-center md:text-left">
-              © 2026 AAVISHKAR – Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College
+              © 2026 AAVISHKAAR – Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College
             </p>
             <p className="text-xs text-muted-foreground/60">
               March 27th & 28th – 2026
