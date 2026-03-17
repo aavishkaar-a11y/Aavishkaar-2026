@@ -20,6 +20,7 @@ import Team from "@/pages/team";
 
 import BackgroundMusic from "@/components/ui/BackgroundMusic";
 import IntroVideo from "@/components/ui/IntroVideo";
+import Popup from "@/components/ui/Popup"; // ✅ IMPORT
 
 const queryClient = new QueryClient();
 
@@ -39,7 +40,17 @@ const App = () => {
             <BackgroundMusic />
 
             <Routes>
-              <Route path="/" element={<Index />} />
+              {/* ✅ HOME PAGE WITH POPUP */}
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Popup />
+                    <Index />
+                  </>
+                }
+              />
+
               <Route path="/about-event" element={<AboutEvent />} />
               <Route path="/patrons" element={<Patrons />} />
               <Route path="/day-1" element={<Day1 />} />

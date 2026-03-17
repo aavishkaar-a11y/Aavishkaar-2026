@@ -7,12 +7,16 @@ import { ProcessSection } from "@/components/home/ProcessSection";
 import { MarqueeText } from "@/components/home/MarqueeText";
 import { Guest } from "@/components/home/Guest";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
+import Popup from "@/components/ui/Popup"; // ✅ ADD THIS
 
 const Index = () => {
   useAutoScroll();
 
   return (
     <Layout>
+
+      <Popup /> {/* ✅ ADD THIS HERE */}
+
       {/* 🎥 Background Video */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <video
@@ -33,18 +37,13 @@ const Index = () => {
       {/* ================= SECTIONS ================= */}
 
       <HeroSection />
-
       <MarqueeText />
-
       <ThemeVideo />
-
       <EventHighlights />
-
       <ProcessSection />
-
       <Guest />
-
       <AboutPreview />
+
     </Layout>
   );
 };

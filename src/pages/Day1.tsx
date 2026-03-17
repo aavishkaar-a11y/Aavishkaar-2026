@@ -97,7 +97,7 @@ const Day1 = () => {
                   </p>
                   
                   <p className="text-secondary uppercase tracking-widest text-xl mb-6 top-8 pt-3">
-                    March 27ᵗʰ, 2026
+                    May 8ᵗʰ, 2026
                   </p>
                 </div>
               </ScrollAnimation>

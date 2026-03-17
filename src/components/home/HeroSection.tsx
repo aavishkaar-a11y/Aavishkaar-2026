@@ -39,7 +39,7 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full neon-border-yellow mb-10 animate-slide-in-right animate-pulse-glow" style={{ animationDelay: "0.3s" }}>
             <Sparkles className="text-primary" size={24} />
             <span className="text-lg md:text-xl font-semibold text-primary">
-              March 27ᵗʰ & 28ᵗʰ – 2026
+              May 8ᵗʰ & 9ᵗʰ – 2026
             </span>
             <Sparkles className="text-primary" size={24} />
                       </div>

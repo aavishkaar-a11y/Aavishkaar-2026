@@ -33,7 +33,7 @@ const AboutEvent = () => {
                   "Unleashed Vibes; Unmatched Energy"
                 </p>
                 <p className="text-secondary uppercase tracking-widest text-xl sm:text-xl  mt-5">
-                  March 27ᵗʰ & 28ᵗʰ – 2026 
+                  May 8ᵗʰ & 9ᵗʰ – 2026 
                 </p>
               </div>
             </ScrollAnimation>

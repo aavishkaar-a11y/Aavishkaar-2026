@@ -73,7 +73,7 @@ const Day2 = () => {
                     SALES • STYLES • SHOWCASE
                   </p>
                    <p className="text-secondary uppercase tracking-widest text-xl mb-2 pt-6">
-                    March 28ᵗʰ, 2026
+                    May 9ᵗʰ, 2026
                   </p>
                 </div>
               </ScrollAnimation>

@@ -68,7 +68,7 @@ const Concert = () => {
 <ScrollAnimation>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6">
                   <Calendar size={16} />
-                  March 28ᵗʰ, 2026 – Evening
+                  May 9ᵗʰ, 2026 – Evening
                 </div>
               </ScrollAnimation>
               {/* POSTER */}
@@ -134,7 +134,7 @@ const Concert = () => {
                   <p className="text-muted-foreground mb-4 text-sm uppercase tracking-wider">
                     Countdown to Concert
                   </p>
-                  <CountdownTimer targetDate="2026-03-28T18:00:00" />
+                  <CountdownTimer targetDate="2026-05-08T18:00:00" />
                 </div>
               </ScrollAnimation>
 
