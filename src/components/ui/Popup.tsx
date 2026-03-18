@@ -1,56 +1,71 @@
 import { useEffect, useState } from "react";
 
 export default function Popup() {
-  const [show, setShow] = useState(false);
-  const [animate, setAnimate] = useState(false);
+  const text =
+    "📢 AAVISHKAAR 2026 has been postponed | Previous Dates: March 27th & 28th ❌ | New Dates: May 8th & 9th ✅";
+
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setShow(true);
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
-    // small delay for animation trigger
-    setTimeout(() => setAnimate(true), 100);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
   }, []);
-
-  if (!show) return null;
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center z-[99999] transition-all duration-500
-      ${animate ? "bg-black/80 backdrop-blur-sm opacity-100" : "bg-black/0 opacity-0"}`}
+      style={{
+        width: "100%",
+        backgroundColor: "#1E2A5A",
+        color: "#FACC15",
+        overflow: "hidden",
+        position: "fixed",
+        top: isMobile ? "65px" : "110px", // ✅ responsive top
+        left: 0,
+        zIndex: 9999,
+      }}
     >
-      <div
-        className={`bg-white text-black p-6 rounded-2xl shadow-2xl text-center w-[340px] border-2 border-red-500 transform transition-all duration-500
-        ${animate ? "scale-100 opacity-100" : "scale-75 opacity-0"}`}
-      >
-
-        <h2 className="text-2xl font-bold text-red-600 mb-3">
-          📢 Important Update
-        </h2>
-
-        <p className="text-sm mb-3 font-medium">
-          AAVISHKAAR 2026 has been{" "}
-          <span className="text-red-500 font-bold">postponed</span>.
-        </p>
-
-        <p className="text-sm mb-2">
-          📅 Previous Dates:{" "}
-          <span className="line-through text-gray-500">
-            March 27th & 28th
-          </span>
-        </p>
-
-        <p className="text-base font-bold text-green-600 mb-4">
-          ✅ New Dates: May 8th & 9th
-        </p>
-
-        <button
-          onClick={() => setShow(false)}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition"
+      <div style={{ display: "flex", whiteSpace: "nowrap" }}>
+        <div
+          style={{
+            padding: "10px 0",
+            fontWeight: 700,
+            fontSize: isMobile ? "12px" : "14px", // ✅ responsive font
+            animation: isMobile
+              ? "marquee 16s linear infinite" // slower on mobile
+              : "marquee 12s linear infinite",
+          }}
         >
-          OK
-        </button>
+          {text}
+        </div>
 
+        <div
+          style={{
+            padding: "10px 0",
+            fontWeight: 700,
+            fontSize: isMobile ? "12px" : "14px",
+            animation: isMobile
+              ? "marquee 16s linear infinite"
+              : "marquee 12s linear infinite",
+          }}
+        >
+          {text}
+        </div>
       </div>
+
+      <style>
+        {`
+          @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+          }
+        `}
+      </style>
     </div>
   );
 }

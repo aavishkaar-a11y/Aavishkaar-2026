@@ -7,15 +7,12 @@ import { ProcessSection } from "@/components/home/ProcessSection";
 import { MarqueeText } from "@/components/home/MarqueeText";
 import { Guest } from "@/components/home/Guest";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
-import Popup from "@/components/ui/Popup"; // ✅ ADD THIS
 
 const Index = () => {
   useAutoScroll();
 
   return (
     <Layout>
-
-      <Popup /> {/* ✅ ADD THIS HERE */}
 
       {/* 🎥 Background Video */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -30,11 +27,8 @@ const Index = () => {
           <source src="/videos/contact-bg.mp4" type="video/mp4" />
         </video>
 
-        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/70" />
       </div>
-
-      {/* ================= SECTIONS ================= */}
 
       <HeroSection />
       <MarqueeText />
