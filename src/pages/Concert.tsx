@@ -84,7 +84,17 @@ const Concert = () => {
   </div>
 </ScrollAnimation>
 
-
+ {/* Coming Soon Badge */}
+            <ScrollAnimation delay={400}>
+              <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full glass-card neon-border-blue mb-12">
+                <Music className="text-secondary animate-pulse" size={28} />
+                <span className="text-lg md:text-xl font-semibold text-secondary">
+                  Artist Reveal Coming Soon
+                </span>
+                <Sparkles className="text-secondary animate-pulse" size={28} />
+              </div>
+            </ScrollAnimation>
+            
               {/* COUNTDOWN */}
               <ScrollAnimation delay={500}>
                 <div className="mb-8">
