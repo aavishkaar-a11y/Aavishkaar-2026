@@ -12,11 +12,6 @@ import {
 import { ScrollAnimation } from "@/components/ui/ScrollAnimation";
 import { CountdownTimer } from "@/components/home/CountdownTimer";
 import proShowPoster from "@/assets/pro-show.jpeg";
-import guest1 from "@/assets/guest1.jpg";
-import guest2 from "@/assets/guest2.jpg";
-import guest3 from "@/assets/guest3.jpg";
-import guest4 from "@/assets/guest4.jpg";
-import guest5 from "@/assets/guest5.jpg";
 
 const Concert = () => {
   return (
@@ -94,7 +89,7 @@ const Concert = () => {
                 <Sparkles className="text-secondary animate-pulse" size={28} />
               </div>
             </ScrollAnimation>
-            
+            q
               {/* COUNTDOWN */}
               <ScrollAnimation delay={500}>
                 <div className="mb-8">

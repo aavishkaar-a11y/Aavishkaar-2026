@@ -28,10 +28,10 @@ const AboutEvent = () => {
                 <h1 className="font-samarkan text-6xl sm:text-8xl md:text-8xl neon-yellow mb-4 sm:mb-6">
                   aavishkaar 2026
                 </h1>
-
                 <p className="text-sm sm:text-lg text-foreground/80 italic">
                   "Unleashed Vibes; Unmatched Energy"
                 </p>
+
                 <p className="text-secondary uppercase tracking-widest text-xl sm:text-xl  mt-5">
                   May 8ᵗʰ & 9ᵗʰ – 2026 
                 </p>
